@@ -1,0 +1,14 @@
+{
+  "name": "aion-prod",
+  "description": "AION WORK skills and MCP integration for daily work and team collaboration.",
+  "owner": {
+    "name": "AION"
+  },
+  "plugins": [
+    {
+      "name": "aion-work",
+      "version": "1.2.1",
+      "source": "./plugins/aion-work"
+    }
+  ]
+}

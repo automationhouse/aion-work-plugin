@@ -1,0 +1,10 @@
+---
+name: poranek
+description: >-
+  Poranek z AION WORK: ważne zmiany, priorytet dnia i pierwszy gotowy szkic.
+  Używaj na „poranek”, „zaplanuj mi dzień” albo „od czego dziś zacząć”.
+---
+
+Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń razem z `rutyny/README.md`, `rutyny/poranek.md` oraz `rutyny/sygnaly.md` przez `read_instruction`.
+
+Wykonaj metodę `rutyny/poranek.md` dla zakresu podanego przez użytkownika. Przygotowanie planu i pierwszego materiału nie uruchamia automatycznie dalszej pracy ani harmonogramu.

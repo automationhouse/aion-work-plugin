@@ -1,0 +1,26 @@
+{
+  "name": "aion-work",
+  "version": "1.2.1",
+  "description": "AION WORK: rutyny, OS-y i współpraca firmy w wielu repozytoriach, z osobistym MIND.",
+  "author": {
+    "name": "AION"
+  },
+  "homepage": "https://app.aionwork.com/work-plugin",
+  "repository": "https://github.com/automationhouse/aion-work-plugin",
+  "skills": "./skills/",
+  "mcpServers": "./codex.mcp.json",
+  "interface": {
+    "displayName": "AION WORK",
+    "shortDescription": "Twój asystent codziennej pracy",
+    "longDescription": "AION WORK łączy codzienne rutyny, metody OS, prywatny MIND i Company Context z pracą zespołową w wielu repozytoriach lub udostępnionych folderach. Dostęp dla członków firm AION i osób z uprawnieniem abonamentowym.",
+    "developerName": "AION",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Co mogę zrobić z AIONem?"
+    ]
+  }
+}

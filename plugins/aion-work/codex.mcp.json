@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "aion-work": {
+      "type": "http",
+      "url": "https://app.aionwork.com/api/mcp/work",
+      "scopes": [
+        "email",
+        "profile"
+      ],
+      "oauth": {
+        "clientId": "ab749a6d-47bc-4838-9e2e-93a821c9deda",
+        "callbackPort": 54329
+      }
+    }
+  }
+}
