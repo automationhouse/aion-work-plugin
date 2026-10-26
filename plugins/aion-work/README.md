@@ -26,7 +26,7 @@ You can also select AION WORK from the `aion-prod` source in Codex's plugin brow
 
 Start a new session after installation. Invoke the `aion-work:start` skill (in Claude Code: `/aion-work:start`) and complete the client's AION sign-in and consent flow. The server is `https://app.aionwork.com/api/mcp/work`. Never paste passwords, tokens or OAuth callback URLs into a chat or repository.
 
-The first successful check reads your profile and AION's core working instructions. An installed plugin alone does not confirm account access. Git and Python 3.10+ are needed for the optional repository guard and folder health workflows, not for accessing remote methods alone. GitHub repository access is authorized separately from AION sign-in.
+The first successful check reads your account profile and AION's core working instructions. Setup uses available materials and existing team repositories, then moves to your first task. It does not require a personal profile, a communication-style questionnaire or routine configuration. A request to prepare a repository from Company Context authorizes only the agreed source, destination and recipients; starting the plugin alone does not import or publish data. An installed plugin alone does not confirm account access. Git and Python 3.10+ are needed for the optional repository guard and folder health workflows, not for accessing remote methods alone. GitHub repository access is authorized separately from AION sign-in.
 
 ## Update
 
