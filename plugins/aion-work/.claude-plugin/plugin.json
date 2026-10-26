@@ -1,10 +1,12 @@
 {
   "name": "aion-work",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "AION WORK: rutyny, OS-y i współpraca firmy w wielu repozytoriach, z osobistym MIND.",
   "author": {
     "name": "AION"
   },
   "homepage": "https://app.aionwork.com/work-plugin",
-  "repository": "https://github.com/automationhouse/aion-work-plugin"
+  "repository": "https://github.com/automationhouse/aion-work-plugin",
+  "displayName": "AION WORK",
+  "icon": "./assets/icon.png"
 }

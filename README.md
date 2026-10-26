@@ -57,14 +57,31 @@ Start a new session and verify the plugin version, AION tools, profile and core 
 
 If `aion-prod` already points to a local ZIP extraction, replace that marketplace registration with this GitHub source. Do not register a second AION MCP server. Note your existing source path and installation scope first, and keep the old extraction until the new installation works.
 
-Claude Code:
+Claude Code: first inspect the configured source and installed plugins:
 
 ```sh
-claude plugin uninstall aion-work@aion-prod --scope user
-claude plugin marketplace remove aion-prod
-claude plugin marketplace add automationhouse/aion-work-plugin --scope user
-claude plugin install aion-work@aion-prod --scope user
+claude plugin marketplace list
+claude plugin list
 ```
+
+Proceed only when `aion-prod` is the old local ZIP marketplace, AION WORK is its only installed plugin, the marketplace is declared only at that installation's scope, and the installation is not managed. Check user, project and local settings for marketplace declarations if the CLI listings do not show their scopes. Verify that the GitHub repository is reachable and its manifests identify marketplace `aion-prod` and plugin `aion-work` before changing the local installation. Both sources use the same marketplace name, so Claude Code cannot register them side by side. The AION plugin declares no saved options or secrets. If the installed copy has any, or any check fails, stop without changing anything.
+
+Record the old source's absolute path as `<OLD_SOURCE>` and keep that directory intact until migration succeeds. Replace `<SCOPE>` with the existing `user`, `project`, or `local` scope:
+
+```sh
+claude plugin uninstall aion-work@aion-prod --scope <SCOPE> --keep-data
+claude plugin marketplace remove aion-prod --scope <SCOPE>
+claude plugin marketplace add automationhouse/aion-work-plugin --scope <SCOPE>
+claude plugin marketplace list
+claude plugin install aion-work@aion-prod --scope <SCOPE>
+claude plugin list
+```
+
+Confirm the marketplace list shows the GitHub source and the installed plugin retains its existing scope. `--keep-data` preserves Claude Code's plugin data directory. Sign in again only if the client requests it.
+
+If any step fails after uninstalling the old plugin, stop the migration and inspect the current state. Uninstall a partially installed replacement at `<SCOPE>` with `--keep-data` if present, then remove only the newly added marketplace declaration at `<SCOPE>` if present. Restore the recorded local source with `claude plugin marketplace add "<OLD_SOURCE>" --scope <SCOPE>` only if its declaration is missing, then reinstall `aion-work@aion-prod` at `<SCOPE>` and verify the source and installed scope. Restoration may use the previous version. If recovery fails, stop and report the remaining state. A client approval denial requires approval before the blocked operation; recovery is not a way around it.
+
+If GitHub preflight failed, leave the original installation registered. To use a newer ZIP instead, inspect it first, back up and update only that local package directory, and refresh the plugin at `<SCOPE>`. Never add a second `user` installation as a migration fallback. Use `user` only for a fresh installation.
 
 Codex:
 

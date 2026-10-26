@@ -1,6 +1,6 @@
 {
   "name": "aion-work",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "AION WORK: rutyny, OS-y i współpraca firmy w wielu repozytoriach, z osobistym MIND.",
   "author": {
     "name": "AION"
@@ -11,6 +11,8 @@
   "mcpServers": "./codex.mcp.json",
   "interface": {
     "displayName": "AION WORK",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png",
     "shortDescription": "Twój asystent codziennej pracy",
     "longDescription": "AION WORK łączy codzienne rutyny, metody OS, prywatny MIND i Company Context z pracą zespołową w wielu repozytoriach lub udostępnionych folderach. Dostęp dla członków firm AION i osób z uprawnieniem abonamentowym.",
     "developerName": "AION",
