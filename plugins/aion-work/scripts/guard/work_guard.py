@@ -13,9 +13,9 @@ import sys
 import tempfile
 import time
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 MAX_OUTPUT = 16 * 1024 * 1024
-MAX_BLOB = 5 * 1024 * 1024
+MAX_BLOB = 50 * 1024 * 1024
 MAX_COMMITS = 10000
 MAX_ENTRIES = 100000
 MAX_SCANNED_BYTES = 128 * 1024 * 1024
@@ -26,12 +26,7 @@ RULES = {
     "aws_key": re.compile(r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b"),
     "api_token": re.compile(r"\b(?:sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{24,}|sk_(?:live|test)_[A-Za-z0-9]{16,}|xox[baprs]-[A-Za-z0-9-]{20,})"),
     "credential_url": re.compile(r"\b(?:https?|postgres(?:ql)?|mysql|mongodb(?:\+srv)?|redis)://[^\s/:@]+:[^\s/@]{4,}@", re.I),
-    "jwt": re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}"),
 }
-ASSIGNMENT = re.compile(
-    r'''(?im)^\s*["']?(?:[a-z0-9]+[_-])*(?:password|passwd|api[_-]?key|access[_-]?token|refresh[_-]?token|client[_-]?secret|service[_-]?role[_-]?key|secret[_-]?access[_-]?key)["']?\s*[:=]\s*(?:["']([^"'\r\n]{8,})["']|([^\s"',;}{]{8,}))'''
-)
-PLACEHOLDERS = ("${", "{{", "process.env.", "os.environ", "os.getenv(", "env(", "your_", "replace_", "example_", "<")
 
 
 class Blocked(Exception):
@@ -64,15 +59,15 @@ class Guard:
         self.policy = json.loads(Path(__file__).with_name("policy.json").read_text())
         require(self.policy["version"] == 1, "unsupported_policy")
 
-    def git(self, *args, missing_ok=False):
+    def git(self, *args, missing_ok=False, max_output=MAX_OUTPUT):
         require(time.monotonic() < self.deadline, "scan_timeout")
         env = dict(os.environ, GIT_NO_REPLACE_OBJECTS="1", GIT_NO_LAZY_FETCH="1", GIT_TERMINAL_PROMPT="0")
         command = ["git", "--no-pager", "--no-optional-locks", "-c", "core.fsmonitor=false", "-c", "protocol.allow=never", "-C", str(self.root), *args]
         with tempfile.TemporaryFile() as output:
             result = subprocess.run(command, stdout=output, stderr=subprocess.DEVNULL, env=env, timeout=min(30, max(1, self.deadline - time.monotonic())))
             output.seek(0)
-            data = output.read(MAX_OUTPUT + 1)
-        require(len(data) <= MAX_OUTPUT, "output_limit")
+            data = output.read(max_output + 1)
+        require(len(data) <= max_output, "output_limit")
         if result.returncode and missing_ok:
             return None
         require(result.returncode == 0, "git_read_failed")
@@ -81,22 +76,18 @@ class Guard:
     def path(self, path):
         parts = path.replace("\\", "/").casefold().split("/")
         require(not any(part in {item.casefold() for item in self.policy["blockedComponents"]} for part in parts), "blocked_folder", path)
+        normalized = "/".join(parts)
+        require(not any(normalized == item or normalized.endswith("/" + item) for item in self.policy["credentialPaths"]), "credential_file", path)
         require(not any(part.startswith(tuple(self.policy["blockedPrefixes"])) for part in parts), "environment_file", path)
         require(parts[-1] not in self.policy["privateKeyNames"], "private_key_file", path)
         require(not parts[-1].endswith(tuple(self.policy["privateKeySuffixes"])), "private_key_file", path)
 
     def content(self, data, path):
-        try:
-            text = data.decode("utf-8")
-        except UnicodeDecodeError:
-            raise Blocked("unscannable_binary", path) from None
-        require("\x00" not in text, "unscannable_binary", path)
-        require(not text.startswith("version https://git-lfs.github.com/spec/v1"), "unscanned_lfs_content", path)
+        # Preserve ASCII secret signatures in every format without rejecting binary assets.
+        # This does not decode images, compressed archives or external LFS objects.
+        text = data.decode("ascii", errors="replace")
         for code, pattern in RULES.items():
             require(not pattern.search(text), code, path)
-        for match in ASSIGNMENT.finditer(text):
-            value = (match.group(1) or match.group(2)).lower()
-            require(value.startswith(PLACEHOLDERS), "secret_assignment", path)
 
     def object(self, oid, kind, path):
         valid_oid(oid)
@@ -106,14 +97,17 @@ class Guard:
         require(size <= MAX_BLOB, "file_size_limit", path)
         self.scanned_bytes += size
         require(self.scanned_bytes <= MAX_SCANNED_BYTES, "scan_size_limit")
-        self.content(self.git("cat-file", kind, oid), path)
+        self.content(self.git("cat-file", kind, oid, max_output=MAX_BLOB), path)
         self.seen.add(oid)
 
     def entry(self, mode, oid, path):
         self.entries += 1
         require(self.entries <= MAX_ENTRIES, "entry_limit")
         self.path(path)
-        require(mode in ("100644", "100755"), "unsupported_file_mode", path)
+        # Gitlinks contain only an object ID; do not read a submodule's working copy.
+        if mode == "160000":
+            return
+        require(mode in ("100644", "100755", "120000"), "unsupported_file_mode", path)
         self.object(oid, "blob", path)
 
     def staged(self):
@@ -135,7 +129,7 @@ class Guard:
     def tree_entry(self, record):
         metadata, raw_path = record.split(b"\t", 1)
         mode, kind, oid = metadata.decode("ascii").split()
-        require(kind == "blob", "unsupported_file_mode", raw_path.decode("utf-8"))
+        require(kind == "blob" or (kind == "commit" and mode == "160000"), "unsupported_file_mode", raw_path.decode("utf-8"))
         self.entry(mode, oid, raw_path.decode("utf-8"))
 
     def commit_target(self, oid):

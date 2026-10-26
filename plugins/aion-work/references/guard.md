@@ -1,6 +1,6 @@
 # Bezpiecznik zawartości AION WORK
 
-Skrypt `scripts/guard/work_guard.py` kontroluje zawartość. Agent używa zwykłego Gita i przestrzega zasad repozytorium. Skrypt nie wykonuje clone, add, commit, push, merge, rebase ani reset, nie wybiera gałęzi i nie narzuca struktury dokumentów.
+Skrypt `scripts/guard/work_guard.py` chroni przed oczywistymi wyciekami sekretów i danych uwierzytelniających. Nie ocenia organizacji repo ani przydatności jego plików. Agent używa zwykłego Gita i przestrzega zasad repozytorium. Skrypt nie wykonuje clone, add, commit, push, merge, rebase ani reset, nie wybiera gałęzi i nie narzuca struktury dokumentów.
 
 ## Zakres
 
@@ -9,13 +9,13 @@ Skrypt `scripts/guard/work_guard.py` kontroluje zawartość. Agent używa zwykł
 - `install`: instaluje lokalne hooki `pre-commit` i `pre-push` wraz z kopią skryptu i polityki w katalogu hooków Git. Nie nadpisuje cudzych hooków i nie zmienia `core.hooksPath`. Przy istniejących hookach lub własnym `core.hooksPath` zatrzymuje instalację; potrzebna jest integracja z dotychczasowym mechanizmem zespołu.
 - `status`: potwierdza zgodność zainstalowanych plików i wykonywalność hooków. Zmiana wersji skryptu lub interpretera wymaga ponownej integracji; nie przedstawiaj starej instalacji jako aktualnej.
 
-Polityka blokuje składniki ścieżek niezależnie od wielkości liter: `AION_LOCAL`, `.git`, `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, `.codex`, `.claude`, `.agents`, pliki i katalogi zaczynające się od `.env`, standardowe nazwy prywatnych kluczy SSH oraz rozszerzenia `.key`, `.p12`, `.pfx`. `.github`, `.gitignore`, `.gitattributes`, kod i zwykłe dokumenty tekstowe są dozwolone, o ile przejdą kontrolę treści. `.gitignore` nie zastępuje tej kontroli.
+Polityka blokuje składniki ścieżek niezależnie od wielkości liter: `.git`, `.ssh`, `.aws`, `.azure`, `.gnupg`, `.kube`, pliki i katalogi zaczynające się od `.env`, standardowe nazwy prywatnych kluczy SSH oraz magazyny kluczy `.p12` i `.pfx`. Blokuje też konkretne pliki logowania `.codex/auth.json` i `.claude/.credentials.json`, również wewnątrz podfolderów. `.claude/`, `.codex/` i `.agents/` są dozwolone: instrukcje, skille i konfigurację zespołu można współdzielić według zasad repo. Sama nazwa `AION_LOCAL` lub rozszerzenie `.key` nie powodują odmowy; prywatna zawartość nadal wymaga ochrony. `.gitignore` nie zastępuje kontroli sekretów.
 
 Zwykłe skrypty UTF-8 `.py` i `.sh` są dozwolone także w historii, jeżeli ich ścieżka i treść przechodzą kontrolę. AION WORK nie używa starego helpera `aion_git.py` ani jego poleceń `save-draft` i `update`; nie przenoś jego listy formatów do AION WORK. Nie usuwaj skryptów ani nie przepisuj historii tylko z powodu rozszerzenia.
 
 Po przygotowaniu usunięcia pliku w indeksie `staged` nie skanuje jego dawnej wersji. `pre-push` nadal kontroluje nowe, wysyłane commity: jeżeli zawierają niedozwoloną treść, późniejsze usunięcie jej nie usuwa z historii. To inna blokada niż rozszerzenie pliku. Odmowa publikacji nie blokuje samej edycji lokalnej ani odczytu; zachowaj lokalne wyniki i wyjaśnij, czego nie wysłano.
 
-W treści sprawdza rozpoznane wzorce kluczy prywatnych, tokenów GitHub, AWS, API, JWT, adresów z hasłem oraz literalnych przypisań haseł i tokenów. Nie wypisuje znalezionych wartości, treści plików ani stderr Gita. Wynik JSON zawiera kod odmowy i ewentualną ścieżkę.
+W treści sprawdza rozpoznane wzorce kluczy prywatnych, tokenów GitHub, AWS i API oraz adresów z hasłem. Nie blokuje samego formatu JWT ani przypisania do zmiennej o nazwie `password` lub `token`: takie heurystyki mylą publiczne dane i kod z sekretami. Nie wypisuje znalezionych wartości, treści plików ani stderr Gita. Wynik JSON zawiera kod odmowy i ewentualną ścieżkę.
 
 ## Przygotowanie
 
@@ -35,7 +35,9 @@ Po instalacji zwykłe `git commit` i `git push` wywołują kontrolę. Nie urucha
 
 Nie zeruj kodu zakończenia, nie używaj `--no-verify`, alternatywnego `core.hooksPath`, konektora ani własnej wysyłki, żeby ominąć odmowę. Zatrzymaj publikację i wyjaśnij konkretny kod. Nie dodawaj wyjątków ani nie usuwaj historii automatycznie. Przy fałszywym alarmie potrzebny jest przegląd reguły i konkretnego przypadku, bez ujawniania sekretu w rozmowie.
 
-Brak Pythona, błąd odczytu, niepełna historia, przekroczenie limitu lub nieskanowalna treść blokują operację. Ta wersja skanuje tekst UTF-8; odmawia plików binarnych, wskaźników Git LFS, dowiązań i submodułów. Limity: 5 MiB na obiekt, 128 MiB unikalnych odczytanych obiektów, 100 000 wpisów drzew/indeksu, 10 000 commitów na aktualizację referencji i 120 sekund na wywołanie. Nie pomijaj zablokowanych plików po cichu.
+Grafiki i inne pliki binarne są dozwolone. Guard szuka rozpoznawalnych tekstowych sygnatur sekretów w surowych bajtach niezależnie od rozszerzenia; nie wykonuje OCR, nie rozpakowuje archiwów ani nie dekoduje zawartości obrazów. Wskaźniki Git LFS, dowiązania i submoduły są dozwolone. Sprawdza tekst wskaźnika LFS i zapisaną ścieżkę dowiązania, ale nie pobiera obiektów LFS, nie podąża za dowiązaniami i nie skanuje zawartości submodułów. Nie przedstawiaj tych treści jako sprawdzonych.
+
+Brak Pythona, błąd odczytu, niepełna historia lub przekroczenie budżetu skanowania nadal zatrzymują operację jako kontrolę nieukończoną, nie wykryty wyciek. Limity techniczne: 50 MiB na obiekt, 128 MiB unikalnych odczytanych obiektów, 100 000 wpisów drzew/indeksu, 10 000 commitów na aktualizację referencji i 120 sekund na wywołanie. Odczyt zawartości obiektu dopuszcza 50 MiB wyniku polecenia Git; pozostałe polecenia zachowują limit 16 MiB. Nie pomijaj takich wyników po cichu.
 
 Wzorce nie wykryją każdego sekretu ani danych poufnych opisanych zwykłym tekstem. Lokalne hooki można świadomie ominąć; nie obejmują też zmian wysłanych bez lokalnego Gita, np. przez API GitHuba. Kontrola wymuszana po stronie serwera to osobny mechanizm. Nie obiecuj pełnej ochrony przed wyciekiem.
 

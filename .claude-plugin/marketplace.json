@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "aion-work",
-      "version": "1.2.3",
+      "version": "1.2.4",
       "displayName": "AION WORK",
       "source": "./plugins/aion-work"
     }

@@ -1,18 +1,8 @@
 {
   "version": 1,
-  "blockedComponents": [
-    "AION_LOCAL",
-    ".git",
-    ".ssh",
-    ".aws",
-    ".azure",
-    ".gnupg",
-    ".kube",
-    ".codex",
-    ".claude",
-    ".agents"
-  ],
+  "blockedComponents": [".git", ".ssh", ".aws", ".azure", ".gnupg", ".kube"],
+  "credentialPaths": [".codex/auth.json", ".claude/.credentials.json"],
   "blockedPrefixes": [".env"],
   "privateKeyNames": ["id_rsa", "id_dsa", "id_ecdsa", "id_ed25519"],
-  "privateKeySuffixes": [".key", ".p12", ".pfx"]
+  "privateKeySuffixes": [".p12", ".pfx"]
 }

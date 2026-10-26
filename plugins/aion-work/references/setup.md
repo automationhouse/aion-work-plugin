@@ -211,7 +211,7 @@ Panel **AION WORK PLUGIN → wybrany zespół → ustawienia zespołu → repozy
 
 - Aktualny bezpiecznik jest już podłączony i `status` potwierdza instalację → **11c**.
 - Inne hooki lub `core.hooksPath` wymagają integracji → zachowaj je, wskaż konkretny krok integracji z zespołem i pozostaw publikację jako niegotową → **11c**. Nie nadpisuj istniejących zabezpieczeń.
-- Można zainstalować lokalne hooki → zapytaj: „Podłączyć w tym repozytorium kontrolę blokującą prywatne katalogi i rozpoznane sekrety przed commitem i wysyłką?”
+- Można zainstalować lokalne hooki → zapytaj: „Podłączyć w tym repozytorium kontrolę blokującą pliki uwierzytelniające i rozpoznane sekrety przed commitem i wysyłką?”
   - Tak → `install`, następnie `status` według kontraktu. Sukces → **11c**; odmowa → wyjaśnij kod i pozostaw publikację jako niegotową → **11c**.
   - Nie → zachowaj odczyt i edycję lokalną; nie oznaczaj publikacji jako gotowej → **11c**.
 
