@@ -1,6 +1,6 @@
 # Przygotowanie Git i Pythona
 
-Czytaj wyłącznie dla brakującego narzędzia z wybranej gałęzi drzewa przygotowania w `references/setup.md`. Wiedza zdalna i zwykła praca na folderze nie potrzebują Git ani Pythona. Gałąź Git wymaga Pythona 3.10+ dla [bezpiecznika zawartości](guard.md) przed commitem i pushem. Samymi operacjami Git zarządza agent. Poza tą gałęzią instaluj Python wyłącznie na prośbę użytkownika lub dla konkretnego narzędzia, które go wymaga.
+Czytaj wyłącznie dla brakującego narzędzia potrzebnego do bieżącej czynności według przygotowania w `references/setup.md`. Wiedza zdalna i zwykła praca na folderze nie potrzebują Git ani Pythona. Gałąź Git wymaga Pythona 3.10+ dla [bezpiecznika zawartości](guard.md) przed commitem i pushem. Samymi operacjami Git zarządza agent. Poza tą gałęzią instaluj Python wyłącznie na prośbę użytkownika lub dla konkretnego narzędzia, które go wymaga.
 
 ## 1. Najpierw wykryj środowisko
 
@@ -18,8 +18,8 @@ Przed poleceniami sprawdź bieżącą oficjalną instrukcję i dostępne wersje.
 - **macOS lub Linux:** użyj już zatwierdzonego menedżera pakietów albo oficjalnych instalatorów [Git](https://git-scm.com/install/) i [Python](https://www.python.org/downloads/). Nie instaluj menedżera pakietów tylko po to, by ominąć ustalenie dozwolonej drogi. Zachowaj systemowy Python i istniejące wersje. Ograniczenia firmowe mogą wymagać działania IT.
 - **Chmura:** stosuj [ograniczenia hosta](cloud.md); instalacja dotyczy maszyny tymczasowej, nie komputera użytkownika.
 
-## 3. Sprawdź i wróć do drzewa
+## 3. Sprawdź i kontynuuj pracę
 
-Uruchom wymagane polecenie w środowisku agenta. Jeśli nowy terminal je widzi, a agent nie, wyjaśnij potrzebę ponownego uruchomienia aplikacji w celu odświeżenia PATH. Zostaw krótkie podsumowanie i numer kroku do wznowienia. Nie instaluj ponownie działającego narzędzia ani nie zastępuj całego PATH. Restart komputera jest potrzebny tylko wtedy, gdy wymaga go instalator lub administrator.
+Uruchom wymagane polecenie w środowisku agenta. Jeśli nowy terminal je widzi, a agent nie, wyjaśnij potrzebę ponownego uruchomienia aplikacji w celu odświeżenia PATH. Zostaw krótkie podsumowanie i konkretną czynność do wznowienia. Nie instaluj ponownie działającego narzędzia ani nie zastępuj całego PATH. Restart komputera jest potrzebny tylko wtedy, gdy wymaga go instalator lub administrator.
 
-Krok kończy się dopiero po udanym uruchomieniu wymaganych poleceń. Działający interpreter nie jest jeszcze potwierdzeniem działania konkretnego pomocnika. Wróć do kroku 9 lub 10, z którego odczytano tę instrukcję.
+Krok kończy się dopiero po udanym uruchomieniu wymaganych poleceń. Działający interpreter nie jest jeszcze potwierdzeniem działania konkretnego pomocnika. Kontynuuj czynność, do której potrzebne było narzędzie.
