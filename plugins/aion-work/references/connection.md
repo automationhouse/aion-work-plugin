@@ -24,6 +24,8 @@ Instalacja z polityką `ON_USE` nie gwarantuje otwarcia okna logowania. W ramach
 
 ## Sprawdzenie po instalacji i aktualizacji
 
+Przy aktualizacji rozlicz też stan istniejących kopii guarda według [procedury aktualizacji](guard.md#aktualizacja-istniejącego-guarda). Wersja pluginu nie potwierdza aktualności hooków repo. Nie instaluj nowych hooków ani nie oznaczaj niesprawdzonej integracji jako gotowej.
+
 Zainstalowana wersja, aktywacja pluginu, zalogowane konto i odczyt wiedzy to osobne wyniki. Po wymaganym restarcie sprawdź w nowej rozmowie narzędzia `aion-work`, `get_profile` i odczyt trzech dokumentów rdzenia według punktów powyżej. W folderze pracy sprawdź również odczyt `AGENTS.md` (w Claude Code przez istniejący import `@AGENTS.md`) i dopasowań potwierdzonego użytkownika. Nie uruchamiaj setupu ponownie tylko dla tego sprawdzenia.
 
 Gdy bieżąca sesja nie może otworzyć nowej rozmowy, powiedz „Instalacja potwierdzona; sprawdzenie w nowej rozmowie czeka” i podaj tekst do użycia po restarcie: „Sprawdź połączenie AION WORK, odczytaj rdzeń wiedzy i instrukcje tego folderu”. Nie zgłaszaj zakończonej weryfikacji, zanim otrzymasz jej wynik.

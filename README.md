@@ -30,6 +30,8 @@ The first successful check reads your profile and AION's core working instructio
 
 ## Update
 
+Updating the plugin does not refresh guard copies installed in Git hooks. Before updating, ask the agent to identify existing AION guards in the current repository and any other repositories you explicitly name, and back up their files and previous guard sources outside the repository. Do not scan the disk or clone repositories to discover guards. Skip repositories without a connected guard and process shared worktree hook directories only once.
+
 ### Claude Code
 
 ```sh
@@ -50,6 +52,8 @@ Refresh the installed AION WORK plugin using your client's plugin controls. If y
 codex plugin remove aion-work@aion-prod
 codex plugin add aion-work@aion-prod
 ```
+
+After updating, ask the agent to read `references/guard.md` in the installed plugin and follow “Aktualizacja istniejącego guarda”. Refresh only verified standard AION guard installations, preserving team hooks and `core.hooksPath`. Unknown, modified or custom integrations remain unchanged with a specific integration step reported. `install` does not overwrite an old guard. Verify standard guard copies with `status` from the new script; do not commit or push just to verify them. Report the package update, each repository guard and account connection separately.
 
 Start a new session and verify the plugin version, AION tools, profile and core instructions. Reconnect through the native sign-in flow if requested. Do not copy credentials or replace your entire client configuration.
 
