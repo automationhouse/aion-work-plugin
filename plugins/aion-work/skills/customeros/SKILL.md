@@ -5,6 +5,8 @@ description: Start współpracy, prowadzenie relacji, rozwój i utrzymanie klien
 
 # CustomerOS
 
+Przed pracą potwierdź konto według [łączenia konta](../../references/connection.md) i odczytaj rdzeń jednym wywołaniem `read_instruction({"paths":["welcome.md","communication.md","repository.md"]})`, pomijając dokumenty już przeczytane w tej rozmowie. Brak profilu lokalnego nie uruchamia setupu.
+
 1. Wyszukaj właściwą procedurę przez MCP `search_instructions`, przekazując krótką frazę opisującą zadanie i `moduleKey: "customeros"`. Przekaż `teamId` tylko dla potwierdzonego zespołu oraz `requestOrigin` zgodnie z kontraktem połączenia.
 2. Pobierz wybrany dokument przez `read_instruction`. Serwer sprawdza dostęp; nie wyciągaj wniosków o uprawnieniach z samego wyniku wyszukiwania.
 3. Przy odmowie przekaż powód i sposób uzyskania dostępu zwrócony przez serwer. Nie wymyślaj adresu zakupu ani treści zablokowanej procedury.

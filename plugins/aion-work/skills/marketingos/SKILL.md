@@ -5,6 +5,8 @@ description: Strategia marketingowa, treści, kreacja, kampanie wielokanałowe, 
 
 # MarketingOS
 
+Przed pracą potwierdź konto według [łączenia konta](../../references/connection.md) i odczytaj rdzeń jednym wywołaniem `read_instruction({"paths":["welcome.md","communication.md","repository.md"]})`, pomijając dokumenty już przeczytane w tej rozmowie. Brak profilu lokalnego nie uruchamia setupu.
+
 1. Rozpoznaj cel użytkownika. Korzystaj z MCP AION WORK `search_instructions`, przekazując krótką frazę opisującą zadanie (np. temat lub słowo kluczowe) jako zapytanie i `moduleKey: "marketingos"`. Przekaż `teamId` tylko dla zespołu wybranego w tej rozmowie i `requestOrigin` zgodnie z kontraktem połączenia pluginu.
 2. Pobierz wybraną procedurę przez `read_instruction`. Dostęp sprawdza serwer; widoczny opis nie oznacza uprawnienia do treści.
 3. Przy odmowie przekaż użytkownikowi otrzymany powód i wskazaną przez serwer drogę uzyskania dostępu. Nie wymyślaj linku, nie odtwarzaj niedostępnej instrukcji i nie szukaj jej kopii w innym module.
