@@ -28,6 +28,26 @@ Start a new session after installation. Invoke the `aion-work:start` skill (in C
 
 The first successful check reads your account profile and AION's core working instructions. Setup uses available materials and existing team repositories, then moves to your first task. It does not require a personal profile, a communication-style questionnaire or routine configuration. A request to prepare a repository from Company Context authorizes only the agreed source, destination and recipients; starting the plugin alone does not import or publish data. An installed plugin alone does not confirm account access. Git and Python 3.10+ are needed for the optional repository guard and folder health workflows, not for accessing remote methods alone. GitHub repository access is authorized separately from AION sign-in.
 
+## Additional setup for your team
+
+To extend installation for a customer's environment, add `AION_INSTALLATION.md` to the root of that customer's working repository. This is a Markdown prompt with additional steps for AION start, such as installing a required tool or preparing resources. Keep it in the customer's repository, not in the plugin package.
+
+Start reads this file after standard repository setup and carries out the additional steps before reporting completion. If the file is absent or empty, setup continues normally. Existing permissions and approval requirements still apply. On resumption, Start checks what is already ready and completes only missing work. Ordinary work and plugin updates do not repeat these steps.
+
+Describe each requirement, the action to take when it is missing, and how to verify success. For example:
+
+```markdown
+# Additional installation
+
+1. Check whether the tool described in `tools/README.md` is installed.
+   If missing, install it using that document's instructions.
+   Verify the installed version and report any remaining sign-in step.
+2. Prepare the local resources described in `resources/README.md`.
+   Preserve existing files and verify that the required resources are available.
+```
+
+Reference files that actually exist in your repository. Do not include passwords or tokens. If a step is blocked, Start reports what remains incomplete while preserving the completed setup.
+
 ## Update
 
 Updating the plugin does not refresh guard copies installed in Git hooks. Before updating, ask the agent to identify existing AION guards in the current repository and any other repositories you explicitly name, and back up their files and previous guard sources outside the repository. Do not scan the disk or clone repositories to discover guards. Skip repositories without a connected guard and process shared worktree hook directories only once.
