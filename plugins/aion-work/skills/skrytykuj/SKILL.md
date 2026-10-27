@@ -1,13 +1,12 @@
 ---
 name: skrytykuj
 description: >-
-  Masz plan, ofertę albo tekst przed decyzją lub wysyłką: Skrytykuj z trzech
-  stron z AION WORK. Trzech niezależnych recenzentów szuka najsłabszych miejsc,
-  każdy z innego punktu widzenia, a Ty dostajesz jedną listę zmian od
-  najważniejszej. Dopisz „szybko”, „na ślepo” albo „porażka”, gdy chcesz jednego
-  recenzenta, oceny obcego klienta albo sprawdzenia, co zatopi Twój cel. Za
-  pierwszym razem poprosi o zalogowanie do konta AION.
+  Masz plan, ofertę albo tekst przed decyzją lub wysyłką: Skrytykuj z trzech stron z AION WORK. Trzech niezależnych recenzentów szuka najsłabszych miejsc, każdy z innego punktu widzenia, a Ty dostajesz jedną listę zmian od najważniejszej. Dopisz „szybko”, „na ślepo” albo „porażka”, gdy chcesz jednego recenzenta, oceny obcego klienta albo sprawdzenia, co zatopi Twój cel. Za pierwszym razem poprosi o zalogowanie do konta AION.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Skill AION WORK. Tytuł, sytuacja i opis pochodzą z `description`; jedną listę nazw prowadzi wiedza w `skille/README.md`. Stosuj [minimum komunikacji](../../references/communication.md).
 

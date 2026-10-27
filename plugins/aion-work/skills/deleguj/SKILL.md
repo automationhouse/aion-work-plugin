@@ -1,11 +1,12 @@
 ---
 name: deleguj
 description: >-
-  Brakuje Ci czasu: Deleguj z AION WORK. AI przegląda Twój kalendarz i
-  wysłane maile z dwóch tygodni i najpierw sprawdza, co zrobi AI, potem co
-  ludzie, a na końcu co musi zostać u Ciebie. Dostajesz gotowe zlecenia dla AI i
-  dla ludzi. Za pierwszym razem poprosi o zalogowanie do konta AION.
+  Brakuje Ci czasu: Deleguj z AION WORK. AI przegląda Twój kalendarz i wysłane maile z dwóch tygodni i najpierw sprawdza, co zrobi AI, potem co ludzie, a na końcu co musi zostać u Ciebie. Dostajesz gotowe zlecenia dla AI i dla ludzi. Za pierwszym razem poprosi o zalogowanie do konta AION.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Skill AION WORK. Tytuł, sytuacja i opis pochodzą z `description`; jedną listę nazw prowadzi wiedza w `skille/README.md`. Stosuj [minimum komunikacji](../../references/communication.md).
 

@@ -28,6 +28,12 @@ Start a new session after installation. Invoke the `aion-work:start` skill (in C
 
 The first successful check reads your account profile and AION's core working instructions. Setup uses available materials and existing team repositories, then moves to your first task. It does not require a personal profile, a communication-style questionnaire or routine configuration. A request to prepare a repository from Company Context authorizes only the agreed source, destination and recipients; starting the plugin alone does not import or publish data. An installed plugin alone does not confirm account access. Git and Python 3.10+ are needed for the optional repository guard and folder health workflows, not for accessing remote methods alone. GitHub repository access is authorized separately from AION sign-in.
 
+## Existing repository workflows
+
+When your repository explicitly assigns a phrase such as “start” or “poranek” to a local procedure, AION follows that assignment without adding its own routine. To choose the AION version, select the specific `aion-work:<name>` skill in your client or explicitly ask for that AION routine. Ambiguous requests require a choice; the agent does not automatically combine procedures. Repository data, access and publication rules still apply to either choice.
+
+Setup reuses suitable existing locations for shared preferences and company work records. `AION_USERS/` is a default when no suitable convention exists; private notes remain outside company folders. Existing instruction-loading mechanisms are preserved, and conflicting setup changes are resolved before editing them.
+
 ## Additional setup for your team
 
 To extend installation for a customer's environment, add `AION_INSTALLATION.md` to the root of that customer's working repository. This is a Markdown prompt with additional steps for AION start, such as installing a required tool or preparing resources. Keep it in the customer's repository, not in the plugin package.

@@ -1,12 +1,12 @@
 ---
 name: uporzadkuj
 description: >-
-  Masz chaos w głowie: Uporządkuj sprawy z AION WORK. Mówisz wszystko
-  naraz, w dowolnej kolejności, a AI układa to w Twoje sprawy z następnym
-  krokiem, u kogo jest piłka i do kiedy. Zapisuje po Twoim „ok”. Dopisz „ze
-  skrzynki”, a przeczyta Twoje maile i czaty z 60 dni i wypisze obietnice w obie
-  strony. Za pierwszym razem poprosi o zalogowanie do konta AION.
+  Masz chaos w głowie: Uporządkuj sprawy z AION WORK. Mówisz wszystko naraz, w dowolnej kolejności, a AI układa to w Twoje sprawy z następnym krokiem, u kogo jest piłka i do kiedy. Zapisuje po Twoim „ok”. Dopisz „ze skrzynki”, a przeczyta Twoje maile i czaty z 60 dni i wypisze obietnice w obie strony. Za pierwszym razem poprosi o zalogowanie do konta AION.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Skill AION WORK. Tytuł, sytuacja i opis pochodzą z `description`; jedną listę nazw prowadzi wiedza w `skille/README.md`. Stosuj [minimum komunikacji](../../references/communication.md).
 

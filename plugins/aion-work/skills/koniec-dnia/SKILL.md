@@ -1,10 +1,12 @@
 ---
 name: koniec-dnia
 description: >-
-  Koniec dnia z AION WORK: podsumuj wyniki i otwarte sprawy, wybierz start na
-  jutro. Po ustawieniu osobistym także retrospektywa poprawek i propozycje
-  własnych skilli. Używaj na „koniec dnia” albo „zamknij dzień”.
+  Koniec dnia z AION WORK: podsumuj wyniki i otwarte sprawy, wybierz start na jutro. Po ustawieniu osobistym także retrospektywa poprawek i propozycje własnych skilli. Używaj na „koniec dnia” albo „zamknij dzień”.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń razem z `rutyny/README.md` oraz `rutyny/koniec-dnia.md` przez `read_instruction`. Gdy ustawienie osobiste jest ukończone, dołącz `rutyny/sygnaly.md` i `rutyny/wzorce-plikow.md`.
 

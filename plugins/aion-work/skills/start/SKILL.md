@@ -1,8 +1,13 @@
 ---
 name: start
 description: >-
-  AION start: uruchamia się także na „AION start” i „/aion-start”. AION WORK: połącz konto i poprowadź pracę według aktualnych metod. Używaj na start, przy wznowieniu, pytaniu o możliwości oraz zadaniach, rutynach i pracy z repo AIONa.
+  Połącz lub skonfiguruj AION WORK na „AION start”, „/aion-start” albo jawny
+  wybór tego skilla. Samo „start” obsłuż tylko bez lokalnego przypisania
+  w repo. Zwykłe zadanie, wznowienie pracy i pytanie o możliwości nie
+  uruchamiają tego skilla automatycznie.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Stosuj [minimum komunikacji](../../references/communication.md). Wykorzystuj znane odpowiedzi i wyniki narzędzi. Wyraźne zlecenie samego lokalnego przeglądu przygotowanej kopii może skorzystać z opisanego niżej trybu bez MCP; nie uruchamiaj wtedy logowania tylko dla pomiaru.
 
@@ -14,7 +19,7 @@ Przy pierwszym przygotowaniu lub zmianie środowiska użyj [przygotowania do pie
 
 At the end of initial or resumed repository setup, before reporting completion or starting the first task, check the selected customer's repository root for `AION_INSTALLATION.md` and follow the [installation extension procedure](../../references/setup.md#repository-installation-extension). Skip a missing file silently. Ordinary tasks and returning to a prepared environment do not rerun this extension.
 
-Operacje Git wykonuj zwykłymi narzędziami hosta według zasad firmy i [kontraktu bezpiecznika](../../references/guard.md). Nie ma obowiązkowej gałęzi pracownika. Prywatny profil, dziennik, sprawy i zgody pozostają w osobistym folderze poza synchronizacją firmy; jawne preferencje potwierdzonej osoby należą do AION_USERS. Rutyny końca dnia synchronizują osobiste repo tylko w uzgodnionym zakresie; publikacja firmowa wymaga zlecenia lub wcześniej ustalonego zakresu i respektuje reguły PR.
+Operacje Git wykonuj zwykłymi narzędziami hosta według zasad firmy i [kontraktu bezpiecznika](../../references/guard.md). Nie ma obowiązkowej gałęzi pracownika. Prywatny profil, dziennik, sprawy i zgody pozostają w osobistym folderze poza synchronizacją firmy; jawne preferencje potwierdzonej osoby należą do istniejącego miejsca przyjętego przez zespół, a przy braku odpowiedniej konwencji do AION_USERS, według zdalnego `working-folder.md`. Rutyny końca dnia synchronizują osobiste repo tylko w uzgodnionym zakresie; publikacja firmowa wymaga zlecenia lub wcześniej ustalonego zakresu i respektuje reguły PR.
 
 MIND i import Company Context pozostają dostępne przez narzędzia AION WORK z ich własnymi kontrolami uprawnień. Osobisty MIND zalogowanej osoby czytaj tylko wtedy, gdy jego dane są potrzebne do bieżącego zadania, bez dodatkowej zgody; eksport, zapis i import zachowują osobne zasady z odczytanych metod. Surowych danych MIND nie zapisuj w dokumentach firmy. Dostęp do MCP daje aktywne członkostwo firmowe albo uprawnienie abonamentowe, również legacy; sam OAuth nie wymaga firmy.
 

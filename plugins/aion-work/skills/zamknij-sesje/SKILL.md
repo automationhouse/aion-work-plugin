@@ -1,10 +1,12 @@
 ---
 name: zamknij-sesje
 description: >-
-  Zamknij sesję z AION WORK: zapisz wyniki, decyzje, otwarte sprawy i punkt
-  wznowienia po jednym bloku pracy. Używaj na „zamknij sesję” albo prośbę
-  o podsumowanie bieżącej pracy i zachowanie jej stanu na później.
+  Zamknij sesję z AION WORK: zapisz wyniki, decyzje, otwarte sprawy i punkt wznowienia po jednym bloku pracy. Używaj na „zamknij sesję” albo prośbę o podsumowanie bieżącej pracy i zachowanie jej stanu na później.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń razem z `rutyny/README.md` oraz `rutyny/koniec-dnia.md` przez `read_instruction`.
 

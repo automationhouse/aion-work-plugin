@@ -1,7 +1,12 @@
 ---
 name: marketingos
-description: Strategia marketingowa, treści, kreacja, kampanie wielokanałowe, Meta Ads i Google Ads.
+description: >-
+  Strategia marketingowa, treści, kreacja, kampanie wielokanałowe, Meta Ads i Google Ads.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 # MarketingOS
 

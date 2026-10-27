@@ -1,7 +1,12 @@
 ---
 name: customeros
-description: Start współpracy, prowadzenie relacji, rozwój i utrzymanie klientów. Używaj, gdy użytkownik chce wdrożyć nowego klienta, przygotować status lub raport, rozwinąć relację albo ograniczyć ryzyko odejścia.
+description: >-
+  Start współpracy, prowadzenie relacji, rozwój i utrzymanie klientów. Używaj, gdy użytkownik chce wdrożyć nowego klienta, przygotować status lub raport, rozwinąć relację albo ograniczyć ryzyko odejścia.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 # CustomerOS
 

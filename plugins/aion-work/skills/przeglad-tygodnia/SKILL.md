@@ -1,10 +1,12 @@
 ---
 name: przeglad-tygodnia
 description: >-
-  Przegląd tygodnia z AION WORK: wyniki względem celu, blokady i priorytet
-  kolejnego tygodnia z pierwszym krokiem. Używaj na „przegląd tygodnia”,
-  „podsumuj tydzień” albo „zaplanuj kolejny tydzień”.
+  Przegląd tygodnia z AION WORK: wyniki względem celu, blokady i priorytet kolejnego tygodnia z pierwszym krokiem. Używaj na „przegląd tygodnia”, „podsumuj tydzień” albo „zaplanuj kolejny tydzień”.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń razem z `rutyny/README.md`, `rutyny/tydzien.md` oraz `rutyny/sygnaly.md` przez `read_instruction`.
 

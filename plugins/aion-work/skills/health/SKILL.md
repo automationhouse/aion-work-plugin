@@ -1,7 +1,12 @@
 ---
 name: health
-description: Znajdź potencjalne problemy w wybranym folderze — duże binaria, rozrośnięte Markdowny i uszkodzone linki do lokalnych plików — bez modyfikacji danych.
+description: >-
+  Znajdź potencjalne problemy w wybranym folderze — duże binaria, rozrośnięte Markdowny i uszkodzone linki do lokalnych plików — bez modyfikacji danych.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 # Diagnostyka folderu AION WORK
 

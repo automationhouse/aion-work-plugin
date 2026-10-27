@@ -1,13 +1,12 @@
 ---
 name: poglebij
 description: >-
-  Zaczynasz ważne zadanie: Pogłębij zadanie z AION WORK. AI pokazuje, jak
-  zrobiłby je najlepszy specjalista w Twojej branży, od jakich danych by zaczął i
-  po czym poznać dobry wynik, a potem przepisuje Twoje polecenie. Dopisz „wyżej”,
-  „szerzej” albo „szybciej”, gdy chcesz sprawdzić cel zadania, metody z innych
-  branż albo co AI zrobi od razu. Za pierwszym razem poprosi o zalogowanie do
-  konta AION.
+  Zaczynasz ważne zadanie: Pogłębij zadanie z AION WORK. AI pokazuje, jak zrobiłby je najlepszy specjalista w Twojej branży, od jakich danych by zaczął i po czym poznać dobry wynik, a potem przepisuje Twoje polecenie. Dopisz „wyżej”, „szerzej” albo „szybciej”, gdy chcesz sprawdzić cel zadania, metody z innych branż albo co AI zrobi od razu. Za pierwszym razem poprosi o zalogowanie do konta AION.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Skill AION WORK. Tytuł, sytuacja i opis pochodzą z `description`; jedną listę nazw prowadzi wiedza w `skille/README.md`. Stosuj [minimum komunikacji](../../references/communication.md).
 

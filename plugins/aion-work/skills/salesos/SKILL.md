@@ -1,7 +1,12 @@
 ---
 name: salesos
-description: Przygotowanie kontaktu, rozmowy i oferty oraz rozwój sprzedaży. Używaj, gdy użytkownik chce pozyskać klienta, przygotować rozmowę lub ofertę, obsłużyć obiekcję albo rozwinąć sprzedaż.
+description: >-
+  Przygotowanie kontaktu, rozmowy i oferty oraz rozwój sprzedaży. Używaj, gdy użytkownik chce pozyskać klienta, przygotować rozmowę lub ofertę, obsłużyć obiekcję albo rozwinąć sprzedaż.
+  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
+  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
+
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 # SalesOS
 
