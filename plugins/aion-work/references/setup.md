@@ -4,7 +4,9 @@
 
 Połącz konto, przygotuj miejsce pracy z dostępnych źródeł i przejdź do zadania. Gotowość oznacza możliwość wykonania zleconej pracy, nie ukończony profil, pełny Company Context ani skonfigurowane rutyny. Personalizacja nie jest etapem setupu.
 
-Najpierw sprawdź stan narzędziami i wykorzystaj ustalenia rozmowy. Nie prowadź ankiety „to czy to”, nie pokazuj numerowanych etapów i nie pytaj o wybory, które wynikają ze zlecenia. Zwykłe zadanie wykonuj od razu; przygotuj tylko brak potrzebny do jego realizacji. Samo „co potrafisz?” nie zleca setupu. Samo „AION start” sprawdza dostęp i znane miejsce, a następnie pyta o pierwsze zadanie; nie upoważnia do zakładania repo, importu ani profilu.
+Najpierw sprawdź stan narzędziami i wykorzystaj ustalenia rozmowy. Nie prowadź ankiety „to czy to”, nie pokazuj numerowanych etapów i nie pytaj o wybory, które wynikają ze zlecenia. Zwykłe zadanie wykonuj od razu; przygotuj tylko brak potrzebny do jego realizacji. Samo „co potrafisz?” nie zleca setupu. Samo „AION start”, bez kontekstu dołączania do firmy, sprawdza dostęp i znane miejsce, a następnie pyta o pierwsze zadanie; nie upoważnia do zakładania repo, importu ani profilu.
+
+Przy prośbie o rozpoczęcie pracy z AION po zaproszeniu do firmy zastosuj sekcję „Start zaproszonego pracownika” w zdalnym `starter.md`, dobraną przez skill start. Zaproszenie nie potwierdza członkostwa ani dostępu do danych. Przygotuj tylko to, czego potrzebuje pierwszy poranek, wykorzystując istniejącą konfigurację firmy. Przebieg poranka i propozycję kolejnego prowadzi wiedza; nie kopiuj ich tutaj ani nie uruchamiaj pełnej personalizacji. Konkretne inne zadanie oraz wyraźne „później” mają pierwszeństwo. Przy wznowieniu sprawdź stan i wykonaj tylko brakującą czynność.
 
 Przy zleceniu przygotowania miejsca pracy przedstaw jedną konkretną propozycję na podstawie rozpoznanego stanu: zespół, folder lub repo, źródła i odbiorcy. Wykonaj zakres już upoważniony. Zapytaj tylko o brak uniemożliwiający następne działanie, istotną sprzeczność lub nieuzgodniony dostęp do danych. Zgody systemu i dostawców pozostają w ich oknach. Milczenie nie oznacza zgody. Nie proś o hasła, tokeny ani kody.
 
@@ -81,7 +83,7 @@ After standard setup has prepared the selected customer's working repository, an
 
 ## Zakończ pierwszym zadaniem i wznawiaj potrzebną pracę
 
-Krótko nazwij gotowe miejsce, wykorzystane źródła i istotny brak. Odróżnij zapis lokalny, commit i publikację; w chmurze wskaż faktyczny sposób zachowania wyniku. Jeśli zadanie jest znane, wykonaj je w tej samej rozmowie. W przeciwnym razie zapytaj o pierwszą rzecz do zrobienia, bez menu konfiguracji i rutyn.
+Krótko nazwij gotowe miejsce, wykorzystane źródła i istotny brak. Odróżnij zapis lokalny, commit i publikację; w chmurze wskaż faktyczny sposób zachowania wyniku. Jeśli zadanie jest znane, wykonaj je w tej samej rozmowie. Przy wybranym starcie zaproszonego pracownika kontynuuj jego metodę w `starter.md`, bez pytania „co teraz?”. W pozostałych przypadkach zapytaj o pierwszą rzecz do zrobienia, bez menu konfiguracji i rutyn.
 
 Brak profilu, niepełny kontekst, niewybrany harmonogram lub niegotowa publikacja nie są powodem do dalszego setupu, gdy zadanie można wykonać. Przy przerwaniu zachowaj ustalenia i konkretną blokadę w rozmowie albo odpowiednim prywatnym miejscu; nie zapisuj stanu prywatnego wywiadu w firmowym repo. Przy wznowieniu sprawdź aktualny stan i wykonaj tylko brakujące działanie. Dawne numery kroków traktuj jako wskazówki do brakującej czynności, nie kolejkę pytań do dokończenia.
 
