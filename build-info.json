@@ -2,6 +2,6 @@
   "profile": "prod",
   "pluginName": "aion-work",
   "marketplace": "aion-prod",
-  "pluginVersion": "1.4.1",
+  "pluginVersion": "1.4.2",
   "mcpUrl": "https://app.aionwork.com/api/mcp/work"
 }

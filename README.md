@@ -8,6 +8,10 @@ This is AION's distribution repository. Installing the plugin is separate from c
 
 Use a current version of Codex or Claude Code with plugin marketplace support. Git is required to download this marketplace. Run the commands for your client in a terminal.
 
+Before installing or updating the plugin, verify `git --version` and the CLI for your chosen app: `claude --version` for Claude Code or `codex --version` for Codex. A desktop app installation does not prove that its CLI is available to the agent. Prepare each CLI if you use both apps; CLI commands are also used for supported MCP reauthorization.
+
+If a command is missing, install it for the same user and environment as the app using the official instructions for your OS and shell: [Claude Code CLI](https://code.claude.com/docs/en/setup), [Codex CLI](https://developers.openai.com/codex/cli), and [Git](https://git-scm.com/install/). Preserve working installations and keep native Windows and WSL environments separate. Open a fresh terminal and verify the versions again before continuing. If only the app still cannot find the command, refresh its environment with an agreed restart; do not replace the entire PATH or reinstall a working tool.
+
 ### Claude Code
 
 ```sh

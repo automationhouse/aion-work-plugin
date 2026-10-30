@@ -1,4 +1,15 @@
-# Przygotowanie Git i Pythona
+# Przygotowanie CLI, Git i Pythona
+
+## CLI aplikacji przed instalacją i reautoryzacją
+
+Przy lokalnej instalacji lub aktualizacji AION WORK przygotuj CLI wybranej aplikacji, również gdy użytkownik korzysta z aplikacji desktopowej: Claude Code CLI (`claude`) dla Claude albo Codex CLI (`codex`) dla Codexa. Gdy konfiguruje obie aplikacje, przygotuj oba. Sam interfejs desktopowy nie potwierdza dostępności polecenia w terminalu agenta. Przy reautoryzacji najpierw wykorzystaj natywną akcję hosta; jeśli potrzebny jest terminal, brak CLI jest brakującym narzędziem do przygotowania, nie końcem próby połączenia.
+
+1. Sprawdź polecenie w tym samym środowisku i profilu użytkownika co aplikacja: `claude --version` albo `codex --version`. W PowerShellu ustal ścieżkę przez `Get-Command claude` lub `Get-Command codex`; w powłoce POSIX przez `command -v claude` lub `command -v codex`. Nie przenoś konfiguracji ani poświadczeń między Windows, WSL i chmurą.
+2. Jeśli CLI brakuje, w ramach zleconej instalacji lub połączenia zainstaluj je według aktualnej oficjalnej instrukcji dla wykrytego systemu i powłoki: [Claude Code CLI](https://code.claude.com/docs/en/setup) albo [Codex CLI](https://developers.openai.com/codex/cli). Użyj instalatora dostawcy lub już dostępnego, zatwierdzonego menedżera pakietów. Sprawdź wymagania wybranej metody; nie zakładaj obecności Node.js ani npm. Zachowaj działające instalacje i respektuj zgody hosta. Bez lokalnego terminala lub przy blokadzie nazwij brak i podaj jeden możliwy krok użytkownika; instalacja w chmurze nie przygotowuje jego komputera.
+3. Potwierdź wersję w terminalu agenta. Po zmianie PATH otwórz nowy terminal albo użyj zweryfikowanej ścieżki programu (w PowerShellu `&` przed cytowaną ścieżką). Nie zastępuj całego PATH. Jeśli aplikacja wymaga restartu, pozostaw konkretny krok do wznowienia; nie zamykaj jej bez uzgodnienia.
+4. Wróć do instalacji pluginu lub [uruchomienia OAuth](connection.md#uruchomienie-oauth). Sprawdź aktualne `mcp --help` i rzeczywisty serwer w tym profilu. Zainstalowane CLI nie dowodzi obsługi `mcp login`, wykrycia pluginu ani połączenia konta. Nie dodawaj drugiego serwera, gdy CLI nie widzi połączenia aplikacji. Logowanie i zgodę w przeglądarce kończy użytkownik.
+
+## Git i Python dla potrzebnej czynności
 
 Czytaj wyłącznie dla brakującego narzędzia potrzebnego do bieżącej czynności według przygotowania w `references/setup.md`. Wiedza zdalna i zwykła praca na folderze nie potrzebują Git ani Pythona. Gałąź Git wymaga Pythona 3.10+ dla [bezpiecznika zawartości](guard.md) przed commitem i pushem. Samymi operacjami Git zarządza agent. Poza tą gałęzią instaluj Python wyłącznie na prośbę użytkownika lub dla konkretnego narzędzia, które go wymaga.
 
