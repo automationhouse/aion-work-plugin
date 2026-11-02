@@ -62,6 +62,12 @@ Reference files that actually exist in your repository. Do not include passwords
 
 ## Update
 
+When you use AION WORK in local Codex or Claude Code, the agent checks for a newer release and tries to update your GitHub installation in the background. Keep working as usual. Your next conversation can pick up the new version. If the app needs your help, the agent tells you what to do.
+
+### Manual update
+
+Use the following steps if you want to update immediately or your installation needs individual attention.
+
 Updating the plugin does not refresh guard copies installed in Git hooks. Before updating, ask the agent to identify existing AION guards in the current repository and any other repositories you explicitly name, and back up their files and previous guard sources outside the repository. Do not scan the disk or clone repositories to discover guards. Skip repositories without a connected guard and process shared worktree hook directories only once.
 
 ### Claude Code
@@ -78,7 +84,7 @@ Use the same installation scope if you originally chose a scope other than `user
 codex plugin marketplace upgrade aion-prod
 ```
 
-Refresh the installed AION WORK plugin using your client's plugin controls. If your version has no update action, remove and add only this plugin:
+Refresh the installed AION WORK plugin using your client's update action or run `codex plugin add aion-work@aion-prod` from the refreshed marketplace. Verify the installed version. If your client requires a manual reinstall, remove and add only this plugin:
 
 ```sh
 codex plugin remove aion-work@aion-prod
