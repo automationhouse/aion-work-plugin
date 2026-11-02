@@ -4,7 +4,7 @@
       "type": "http",
       "url": "https://app.aionwork.com/api/mcp/work",
       "http_headers": {
-        "X-AION-Plugin-Version": "1.6.4"
+        "X-AION-Plugin-Version": "1.6.5"
       },
       "scopes": [
         "email",
