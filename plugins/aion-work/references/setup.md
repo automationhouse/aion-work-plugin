@@ -61,7 +61,7 @@ W AION zapisujemy listę zewnętrznych źródeł danych, obecnie repozytoriów G
 4. Odłączenie na wyraźne zlecenie wykonaj przez `remove_team_repository` z `teamId`, `repositoryId` i `expectedVersion`. Usuwasz tylko wpis, nie repozytorium ani pliki. Jeśli odłączasz główne i pozostają inne, najpierw uzgodnij nowe główne i zapisz wybór.
 5. Po sukcesie odczytaj katalog i potwierdź rzeczywisty wynik. Przy konflikcie albo niepewnym wyniku odczytaj stan ponownie i uzgodnij różnicę; nie nadpisuj nowszych zmian ani nie ponawiaj w ciemno. Błąd nie oznacza zapisu.
 
-Panel **AION WORK PLUGIN → wybrany zespół → ustawienia zespołu → repozytoria** jest alternatywą dla uprawnionego członka organizacji. Gdy serwer nie udostępnia narzędzi zapisu, sprawdź `get_service_info` i dostępne narzędzia; zgłoś potrzebę aktualizacji serwera/odświeżenia narzędzi. Abonenta bez organizacji nie kieruj do panelu B2B. Zachowaj lokalną pracę, oznacz powiązanie jako nieukończone i kontynuuj dostępną pracę. Nie używaj innych integracji ani bezpośredniego dostępu do bazy do obejścia braku narzędzi.
+Panel **AION WORK PLUGIN → wybrany zespół → ustawienia zespołu → repozytoria** jest alternatywą dla uprawnionego członka organizacji. Gdy serwer nie udostępnia narzędzi zapisu, sprawdź `get_service_info` i dostępne narzędzia; przekaż sprawę do [pomocy AION](connection.md#pomoc-aion). Abonenta bez organizacji nie kieruj do panelu B2B. Zachowaj lokalną pracę, oznacz powiązanie jako nieukończone i kontynuuj dostępną pracę. Nie używaj innych integracji ani bezpośredniego dostępu do bazy do obejścia braku narzędzi.
 
 ## Publikacja dopiero wtedy, gdy jest potrzebna
 
