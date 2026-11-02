@@ -19,6 +19,8 @@ claude plugin marketplace add automationhouse/aion-work-plugin --scope user
 claude plugin install aion-work@aion-prod --scope user
 ```
 
+Then turn on automatic updates, which are off by default for marketplaces outside Anthropic's directory: in a Claude Code session run `/plugin`, open the **Marketplaces** tab, select `aion-prod` and choose **Enable auto-update**. Claude Code then checks for a new plugin version after your first message in each session and loads it on the next launch. AION's working methods reach you through the server and do not need a plugin update.
+
 ### Codex
 
 ```sh
