@@ -15,7 +15,7 @@ Wybór metody nie zmienia zasad repo dotyczących danych, odbiorców, uprawnień
 
 Skille rutyn są krótkimi wejściami do zdalnych metod. Stosuj [minimum komunikacji](communication.md), a konto sprawdź według [łączenia konta](connection.md). Wykorzystaj udane `get_profile` z tej rozmowy; sam status `connected` nie potwierdza dostępu. Gdy potrzebne jest logowanie, najpierw krótko powiedz, co zrobi wybrana rutyna i że połączysz konto AION.
 
-Po potwierdzeniu dostępu pobierz jednym `read_instruction` rdzeń (`welcome.md`, `communication.md`, `repository.md`) razem ze ścieżkami wskazanymi przez skill. Pomijaj tylko dokumenty już odczytane w tej rozmowie. Przekazuj `requestOrigin` według zasad połączenia oraz potwierdzony `teamId`, gdy pracujesz dla zespołu; nie wybieraj zespołu z domysłu. Dalsze dokumenty dobiera odczytana metoda; pobieraj potrzebne razem.
+Po potwierdzeniu dostępu pobierz rdzeń według [łączenia konta](connection.md), a potem jednym wywołaniem `read_instruction` pobierz ścieżki wskazane przez skill. Pomijaj tylko dokumenty już odczytane w tej rozmowie. Przekazuj `requestOrigin` według zasad połączenia oraz potwierdzony `teamId`, gdy pracujesz dla zespołu; nie wybieraj zespołu z domysłu. Dalsze dokumenty dobiera odczytana metoda; pobieraj potrzebne razem.
 
 Podczas pracy lokalnej stosuj odczytaną sekcję „Potwierdzenie istniejącej konfiguracji” w `welcome.md`. Zgłoszenie sprawdzonej konfiguracji nie uruchamia startu, nie oznacza wykonania poranka ani nie ustawia harmonogramu.
 

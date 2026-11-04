@@ -10,7 +10,7 @@ Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-pro
 
 # MarketingOS
 
-Przed pracą potwierdź konto według [łączenia konta](../../references/connection.md) i odczytaj rdzeń jednym wywołaniem `read_instruction({"paths":["welcome.md","communication.md","repository.md"]})`, pomijając dokumenty już przeczytane w tej rozmowie. Brak profilu lokalnego nie uruchamia setupu.
+Przed pracą potwierdź konto według [łączenia konta](../../references/connection.md) i odczytaj rdzeń dwoma wywołaniami: `read_instruction({"paths":["welcome.md"]})`, potem `read_instruction({"paths":["communication.md","repository.md"]})`, pomijając dokumenty już przeczytane w tej rozmowie. Brak profilu lokalnego nie uruchamia setupu.
 
 1. Rozpoznaj cel użytkownika. Korzystaj z MCP AION WORK `search_instructions`, przekazując krótką frazę opisującą zadanie (np. temat lub słowo kluczowe) jako zapytanie i `moduleKey: "marketingos"`. Przekaż `teamId` tylko dla zespołu wybranego w tej rozmowie i `requestOrigin` zgodnie z kontraktem połączenia pluginu.
 2. Pobierz wybraną procedurę przez `read_instruction`. Dostęp sprawdza serwer; widoczny opis nie oznacza uprawnienia do treści.
