@@ -1,6 +1,6 @@
 # Współpraca przez GitHub
 
-Czytaj, gdy bieżąca praca wymaga GitHuba, według `references/setup.md`. Wykrywaj konto, repozytorium i zasady; pytaj tylko o nierozstrzygnięte dane potrzebne do działania. W chmurze najpierw zastosuj [ograniczenia hosta](cloud.md).
+Czytaj, gdy bieżąca praca wymaga GitHuba, według `references/setup.md`. Wykrywaj konto, repozytorium i zasady; pytaj tylko o nierozstrzygnięte dane potrzebne do działania. Na zdalnej maszynie najpierw zastosuj [ograniczenia hosta](zdalna-maszyna.md).
 
 ## Konto i własność firmowa
 

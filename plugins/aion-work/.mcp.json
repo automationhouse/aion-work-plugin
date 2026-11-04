@@ -4,7 +4,7 @@
       "type": "http",
       "url": "https://app.aionwork.com/api/mcp/work",
       "headers": {
-        "X-AION-Plugin-Version": "1.6.13"
+        "X-AION-Plugin-Version": "1.6.14"
       },
       "oauth": {
         "clientId": "6254298c-10a4-417b-8d1c-ba2aa16975dd",
