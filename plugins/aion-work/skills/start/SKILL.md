@@ -3,9 +3,9 @@ name: start
 description: >-
   Połącz lub skonfiguruj AION WORK na „AION start”, „/aion-start” albo jawny
   wybór tego skilla. Samo „start” obsłuż tylko bez lokalnego przypisania
-  w repo. W folderze bez AION i po zaproszeniu do firmy prowadź czterema
-  krokami (Połącz, Twoja firma, Poczta i kalendarz, Plan dnia) do pierwszego
-  planu dnia i godziny kolejnego. Zwykłe zadanie, wznowienie pracy i pytanie
+  w repo. W folderze bez AION i po zaproszeniu do firmy prowadź pięcioma
+  krokami (Połącz, Twoja firma, Poczta i kalendarz, Plan dnia, Godzina) do
+  pierwszego planu dnia i godziny kolejnego. Zwykłe zadanie, wznowienie pracy i pytanie
   o możliwości nie uruchamiają setupu automatycznie.
 ---
 

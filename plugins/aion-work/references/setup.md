@@ -4,7 +4,7 @@
 
 Połącz konto, przygotuj miejsce pracy z dostępnych źródeł i przejdź do zadania. Gotowość oznacza możliwość wykonania zleconej pracy, nie ukończony profil, pełny Company Context ani skonfigurowane rutyny. Personalizacja nie jest etapem setupu.
 
-Najpierw sprawdź stan narzędziami i wykorzystaj ustalenia rozmowy. Nie prowadź ankiety „to czy to” i nie pytaj o wybory, które wynikają ze zlecenia. Etapów konfiguracji nie wypisujesz; wyjątkiem jest mapa czterech kroków w [starcie od „AION start”](#start-od-aion-start-początek-mapa-i-logowanie). Zwykłe zadanie wykonuj od razu; przygotuj tylko brak potrzebny do jego realizacji. Samo „co potrafisz?” nie zleca setupu. Samo „AION start” w folderze bez AION prowadzi ten start; w gotowym folderze wita według „Powitania w gotowym repo” w zdalnym `welcome.md`, a w folderze osobistym z niedokończonym zakładaniem wznawia je od brakującego kroku. Samo „AION start” nie upoważnia do importu ani profilu, a folder firmy zakłada dopiero po „tak” na konkretną propozycję. Metoda wybrana przez użytkownika, np. folder osobisty, prowadzi własnym tokiem, także z numerowanymi krokami.
+Najpierw sprawdź stan narzędziami i wykorzystaj ustalenia rozmowy. Nie prowadź ankiety „to czy to” i nie pytaj o wybory, które wynikają ze zlecenia. Etapów konfiguracji nie wypisujesz; wyjątkiem są mapa pięciu kroków w [starcie od „AION start”](#start-od-aion-start-początek-mapa-i-logowanie) i mapa sześciu kroków w przygotowaniu firmy (skill `prepare`). Zwykłe zadanie wykonuj od razu; przygotuj tylko brak potrzebny do jego realizacji. Samo „co potrafisz?” nie zleca setupu. Samo „AION start” w folderze bez AION prowadzi ten start; w gotowym folderze wita według „Powitania w gotowym repo” w zdalnym `welcome.md`, a w folderze osobistym z niedokończonym zakładaniem wznawia je od brakującego kroku. Samo „AION start” nie upoważnia do importu ani profilu, a folder firmy zakłada dopiero po „tak” na konkretną propozycję. Metoda wybrana przez użytkownika, np. folder osobisty, prowadzi własnym tokiem, także z numerowanymi krokami.
 
 Pracownik zaproszony do firmy idzie tym startem sam, także gdy wpisał samo „AION start” i nie wspomniał o zaproszeniu. Zaproszenie nie potwierdza członkostwa ani dostępu do danych. Przygotuj tylko to, czego potrzebuje pierwszy plan dnia, wykorzystując istniejącą konfigurację firmy. Kroki po zalogowaniu prowadzi wiedza; nie kopiuj ich tutaj ani nie uruchamiaj pełnej personalizacji. Konkretne inne zadanie oraz wyraźne „później” mają pierwszeństwo. Przy wznowieniu sprawdź stan i wykonaj tylko brakującą czynność.
 
@@ -14,7 +14,7 @@ Pliki i foldery z prefiksem `AION_` oraz ich zawartość zmienia agent na zlecen
 
 ## Start od „AION start”: początek, mapa i logowanie
 
-Rozpoznajesz go lokalnie, jeszcze przed logowaniem. Na samym początku sprawdzasz też, czy w tej rozmowie są narzędzia poczty i kalendarza (np. łączniki Gmaila, Kalendarza Google albo Outlooka), i zapamiętujesz wynik do kroku Poczta i kalendarz. Gdy start nie niesie zadania, a bieżący folder nie ma `AGENTS.md` według wzorca AION i nie jest folderem osobistym (także w rozmowie poza folderem), prowadzisz nową osobę czterema krokami do pierwszego planu dnia. Gotowy folder, folder osobisty z niedokończonym zakładaniem i start z zadaniem idą swoimi ścieżkami według zdalnego `welcome.md`, bez mapy.
+Rozpoznajesz go lokalnie, jeszcze przed logowaniem. Na samym początku sprawdzasz też, czy w tej rozmowie są narzędzia poczty i kalendarza (np. łączniki Gmaila, Kalendarza Google albo Outlooka), i zapamiętujesz wynik do kroku Poczta i kalendarz. Gdy start nie niesie zadania, a bieżący folder nie ma `AGENTS.md` według wzorca AION i nie jest folderem osobistym (także w rozmowie poza folderem), prowadzisz nową osobę pięcioma krokami do pierwszego planu dnia i godziny kolejnego. Gotowy folder, folder osobisty z niedokończonym zakładaniem i start z zadaniem idą swoimi ścieżkami według zdalnego `welcome.md`, bez mapy.
 
 Pierwsza wiadomość, bez obietnicy czasu, zanim sprawdzisz konto, także gdy jest już połączone:
 
@@ -28,17 +28,20 @@ Twój start z AION WORK
   Twoja firma
   Poczta i kalendarz
   Plan dnia
+  Godzina
 ```
 
 Gdy host wyświetla obrazki w rozmowie i masz narzędzie, które je tam pokazuje, mapę pokazujesz jako obrazek. W pozostałych miejscach pokazujesz ją tekstem jak wyżej. Po każdym kroku pokazujesz mapę znowu: „✓” przy kroku z potwierdzonym wynikiem narzędzia, z krótkim wynikiem po dwukropku, „→” przy bieżącym i „–” przy kroku, który osoba pominęła, np. „– Poczta i kalendarz: bez podłączania”. Zapowiedź, otwarte okno ani status „połączono” nie odhaczają kroku.
 
 **Połącz.** Nazywasz aplikację, w której piszesz, według `requestOrigin`: „Połączę AION z Twoim Claude” albo „z Twoim ChatGPT”. Drogę logowania dobierasz po faktycznie dostępnych narzędziach, nie po nazwie aplikacji, według [połączenia](connection.md#uruchomienie-oauth). Przed otwarciem przeglądarki mówisz:
 
-> Zaloguj się mailem, na który przyszło zaproszenie. Sprawdź, że adres w przeglądarce kończy się na aionwork.com. To logowanie nie daje dostępu do Twojej poczty.
+> Zaloguj się mailem, na który przyszło zaproszenie. Sprawdź, że adres w przeglądarce to app.aionwork.com. To logowanie nie daje dostępu do Twojej poczty.
 
-Osobie, która mówi, że zaproszenia nie dostała, pierwsze zdanie zamieniasz na „Zaloguj się mailem swojego konta AION.”. Po udanym `get_profile` piszesz „Połączone: <email z profilu>” i mapę z odhaczonym krokiem. Gdy konto było już połączone, logowania nie otwierasz, tylko podajesz to samo zdanie.
+Osobie, która mówi, że zaproszenia nie dostała, pierwsze zdanie zamieniasz na „Zaloguj się mailem swojego konta AION.”. Po udanym `get_profile` piszesz „Połączone: <email z profilu>” i mapę z odhaczonym krokiem. Gdy konto było już połączone, logowania nie otwierasz, tylko podajesz to samo zdanie. Gdy odpowiedź AION podaje nowszą wersję wtyczki niż zainstalowana, mówisz to jednym zdaniem i najpierw aktualizujesz wtyczkę według instrukcji serwera, a start kończysz w nowym czacie.
 
-Potem jednym `read_instruction` pobierasz rdzeń razem ze `starter.md`, `rutyny/README.md`, `rutyny/poranek.md` i `rutyny/sygnaly.md` i prowadzisz dalsze kroki (Twoja firma, Poczta i kalendarz, Plan dnia, godzina kolejnego poranka) według sekcji „Start: od połączenia do planu dnia” w `starter.md`. W środku startu nie prosisz o nową rozmowę: folder firmy pobrany do podfolderu czytasz wprost.
+Potem jednym `read_instruction` pobierasz rdzeń razem ze `starter.md`, `rutyny/README.md`, `rutyny/poranek.md` i `rutyny/sygnaly.md` i prowadzisz dalsze kroki (Twoja firma, Poczta i kalendarz, Plan dnia, godzina kolejnego poranka) według sekcji „Start: od połączenia do planu dnia” w `starter.md`. W środku startu nie prosisz o nową rozmowę: zasady pobranego folderu firmy czytasz wprost.
+
+**GitHub w starcie.** Do folderu firmy wystarcza zwykłe logowanie Gita, które otwiera się samo w przeglądarce albo pokazuje kod do wpisania na stronie GitHuba. Łącznika GitHuba w aplikacji (Claude albo ChatGPT) do startu nie podłączasz. Gdy po logowaniu przeglądarka pokazuje adres w rodzaju 127.0.0.1, nie prosisz o skopiowanie go do rozmowy, bo zawiera jednorazowy kod. Mówisz, żeby zamknąć tę kartę i wrócić do czatu.
 
 ## Sprawdź dostęp i środowisko
 
@@ -62,7 +65,7 @@ Dołączający pracownik korzysta z istniejącego repo, kontekstu i zasad firmy.
 
 Pusty katalog AION nie dowodzi braku repo. Najpierw sprawdź wskazane źródła i ustalenia. Jeśli miejsca nie da się ustalić, poproś o jeden link lub wskazanie osoby zarządzającej. Gdy osoba, która może zmieniać katalog, wybrała w powitaniu założenie folderu firmy, a katalog jest pusty, nie pytaj o link, tylko przejdź do propozycji. Nadal wykonuj zadanie w dostępnym zakresie.
 
-Rodzaj miejsca (folder na GitHubie, wspólny dysk albo zwykły folder) dobieraj według sekcji „Gdzie leży folder firmy” w zdalnym `starter.md`, a GitHub tłumacz według sekcji „GitHub prostymi słowami” w zdalnym `communication.md`. Przy zleceniu nowego repo przygotuj jedną propozycję: rzeczywisty właściciel, nazwa, prywatna widoczność, administrator i odbiorcy z zakresem uprawnień. Zaproponuj nazwę; nie wymagaj jej wymyślania. Nie zgaduj właściciela ani odbiorców z samego członkostwa w AION. Brakujące dane zbierz w krótkiej, konkretnej prośbie zamiast pięciu kolejnych pytań. Przed utworzeniem sprawdź, czy repo już istnieje. Jeśli zlecenie nie obejmuje konkretnych warunków utworzenia i dostępu, pokaż całą propozycję do zatwierdzenia.
+Folder firmy dla zespołu zakłada właściciel albo administrator w przygotowaniu firmy według zdalnego `przygotuj-firme.md` (skill `prepare`); start przechodzi do niego sam, gdy trafi na taką osobę bez folderu firmy. Rodzaj miejsca (folder na GitHubie, wspólny dysk albo zwykły folder) dobieraj według sekcji „Gdzie leży folder firmy” w zdalnym `starter.md`, a GitHub tłumacz według sekcji „GitHub prostymi słowami” w zdalnym `communication.md`. Przy zleceniu nowego repo przygotuj jedną propozycję: rzeczywisty właściciel, nazwa, prywatna widoczność, administrator i odbiorcy z zakresem uprawnień. Zaproponuj nazwę; nie wymagaj jej wymyślania. Nie zgaduj właściciela ani odbiorców z samego członkostwa w AION. Brakujące dane zbierz w krótkiej, konkretnej prośbie zamiast pięciu kolejnych pytań. Przed utworzeniem sprawdź, czy repo już istnieje. Jeśli zlecenie nie obejmuje konkretnych warunków utworzenia i dostępu, pokaż całą propozycję do zatwierdzenia.
 
 Dla firmy wybierz uzgodnioną organizację GitHub; nie umieszczaj jej pracy domyślnie na osobistym koncie pracownika. Rejestrację konta, organizację, zaproszenia i SSO prowadź według [GitHuba](github.md) tylko wtedy, gdy są potrzebne. Administrator przygotowuje miejsce i zasady raz dla zespołu. Nie wymagaj od pracownika tworzenia własnej kopii konfiguracji organizacji.
 
