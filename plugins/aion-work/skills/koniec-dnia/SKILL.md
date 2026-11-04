@@ -8,6 +8,6 @@ description: >-
 
 Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
-Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń, a potem `rutyny/README.md` oraz `rutyny/koniec-dnia.md` przez `read_instruction`. Gdy ustawienie osobiste jest ukończone, dołącz `rutyny/sygnaly.md` i `rutyny/wzorce-plikow.md`.
+Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń, a potem `rutyny/README.md` oraz `rutyny/koniec-dnia.md` przez `read_instruction`. Gdy ustawienie osobiste jest ukończone, pobierz osobnym wywołaniem `rutyny/sygnaly.md` i `rutyny/wzorce-plikow.md`; razem z poprzednimi przekraczają limit jednej odpowiedzi.
 
 Wykonaj metodę końca dnia. Odczyt innych rozmów i synchronizacja osobistego repo wymagają wcześniej uzgodnionego zakresu opisanego w metodzie; samo wywołanie skilla go nie rozszerza.
