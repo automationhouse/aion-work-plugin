@@ -1,3 +1,5 @@
 Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń, a potem `rutyny/README.md`, `rutyny/tydzien.md` oraz `rutyny/sygnaly.md` przez `read_instruction`.
 
 Wykonaj metodę `rutyny/tydzien.md`, uwzględniając wskazany okres i projekty. Osobisty lub zarządczy zakres dobiera metoda; nie zakładaj przeglądu całej firmy z samego wywołania skilla. Osobisty MIND czytaj według metody tylko wtedy, gdy jego dane są potrzebne do bieżącego zadania, bez dodatkowej zgody, z zachowaniem uprawnień konta.
+
+Po pokazaniu rzeczywistego wyniku (bilans wyników i blokad oraz priorytet i pierwszy krok kolejnego tygodnia) zgłoś `report_basic_completion` z `basic: "weeklyReview"`. Przekaż `teamId` tylko potwierdzonej firmy; przy pracy bez wskazanej firmy pomiń go, także gdy osoba należy do kilku firm. Taki wynik liczy się do każdej jej firmy. Nie zgłaszaj samego pobrania instrukcji, konfiguracji ani harmonogramu. Zgłaszaj każde nowe wykonanie, także gdy instrukcja była już odczytana i gdy zmieniła się firma, ale nie ponawiaj zgłoszenia tego samego wyniku. Nie przekazuj treści wyniku. Po błędzie zachowaj wynik i nie obiecuj zaliczenia w panelu.
