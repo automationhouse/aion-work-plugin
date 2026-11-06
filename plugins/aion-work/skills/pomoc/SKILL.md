@@ -2,11 +2,9 @@
 name: pomoc
 description: >-
   Coś nie działa: Pomoc z AION WORK. AI samo sprawdza, co blokuje pracę, i naprawia to z Tobą według odpowiedzi AION. Gdy się nie da, przygotowuje formularz zgłoszenia do pomocy AION z danymi, których potrzebujemy, a Ty go wysyłasz.
-  Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego
-  przypisania w repo. Przy niejednoznaczności zapytaj, którą procedurę wykonać.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego przypisania w repo.
 
 # Pomoc AION WORK
 

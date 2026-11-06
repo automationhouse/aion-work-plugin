@@ -1,0 +1,1 @@
+Przygotowanie firmy robi teraz AION chmura, ścieżka „z zespołem”. Wykonaj [AION chmura](chmura.md) od jego pierwszej wiadomości, z wybraną ścieżką „z zespołem”, i nie pytaj o ścieżkę drugi raz. Osobie powiedz jednym zdaniem, że od teraz to polecenie nazywa się „AION chmura”.

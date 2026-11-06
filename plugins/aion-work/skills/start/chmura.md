@@ -1,15 +1,3 @@
----
-name: chmura
-description: >-
-  AION chmura: drugi krok po „AION start” dla osoby, która pracuje sama, albo
-  właściciela firmy z folderem tylko dla siebie. Na „AION chmura”,
-  „/aion-chmura”, „przenieś do chmury”, „kopia w chmurze”, „chcę wpuścić
-  zespół” albo jawny wybór tego skilla. Dwie ścieżki: „sam” robi prywatną kopię
-  folderu na osobistym GitHubie, „z zespołem” zakłada folder firmy na GitHubie
-  firmy, wiedzę firmy, pocztę firmy i zaproszenia. Poranek dalej robi się na
-  komputerze.
----
-
 Twoja pierwsza wiadomość w rozmowie, napisana do osoby jako tekst, zanim przeczytasz jakikolwiek plik albo wywołasz narzędzie, także gdy konto jest już połączone:
 
 > Poranek dalej robi się na tym komputerze, kiedy jest włączony. AION chmura robi kopię Twojego folderu na GitHubie albo wspólny folder firmy dla zespołu. Najpierw połączę Twoje konto.
@@ -24,7 +12,6 @@ AION chmura
 
 Po wyborze ścieżki mapa dostaje jej kroki według `chmura.md`. Odhaczasz ją tak jak w starcie: „✓” po potwierdzonym wyniku narzędzia, „→” przy bieżącym kroku, „–” przy pominiętym.
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Dalsze kroki dotyczą wyłącznie wybranego skilla AION.
 
 Stosuj [minimum komunikacji](../../references/communication.md).
 
