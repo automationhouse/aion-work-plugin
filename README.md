@@ -1,6 +1,6 @@
 # AION WORK
 
-AION WORK brings daily work routines, MarketingOS, SalesOS, CustomerOS, personal MIND access and team collaboration to Codex and Claude Code. The plugin connects to AION over MCP. Its skills and working methods are primarily in Polish.
+AION WORK brings daily work routines, MarketingOS, SalesOS, CustomerOS, AI Powered CEO, personal MIND access and team collaboration to Codex and Claude Code. The plugin connects to AION over MCP. Its skills and working methods are primarily in Polish.
 
 This is AION's distribution repository. Installing the plugin is separate from connecting an AION account. Protected features require an eligible AION account; individual modules and resources have their own access rules. Installing this public package does not grant access to paid methods, company data or private MIND content.
 
@@ -38,7 +38,7 @@ Before you type “AION start”, open an empty folder named “AION” in your 
 
 If you work alone, or you own a company that has no company folder in AION yet, “AION start” creates one folder only for you and your morning plan comes from it. When you are ready, type “AION chmura” (part of `aion-work:start`). Working alone, it makes a private copy of your folder on your own GitHub account. With a team, it creates the company folder in the company’s GitHub organization, lists it in AION, brings in what AION already knows about the company, writes a short description of each team member, checks how the company’s mail can be read and lists the invitations to send. Your morning plan still runs on your computer. Team members then only type “AION start”. The old “AION prepare” command leads to the same team path. If interrupted, ask to continue: AION checks what is already done instead of repeating it.
 
-After “/” you see nine entries. General methods (uporządkuj, pogłębij, skrytykuj, deleguj, weekly and monthly review, session closure, repo hygiene, mail) are in `aion-work:podstawy`, marketing skills in `aion-work:marketingos`. Type the method after the basket, for example “/aion-work:podstawy skrytykuj this offer”, or simply use “/aion”.
+After “/” you see ten entries. General methods (uporządkuj, pogłębij, skrytykuj, deleguj, weekly and monthly review, session closure, repo hygiene, mail) are in `aion-work:podstawy`, marketing skills in `aion-work:marketingos`, and skills for running a company (business, processes, people, finance) in `aion-work:businessos` (AI Powered CEO). Type the method after the basket, for example “/aion-work:podstawy skrytykuj this offer”, or simply use “/aion”.
 
 After setup, one command is enough: “/aion” (`aion-work:aion`; in a prepared folder also `/aion` in Claude Code and `$aion` in Codex). With a task, for example “/aion criticise this offer”, it picks the AION method straight away. Without a task it recognises where you are: it signs you in again when your app asks for it, helps when something does not work, finishes an interrupted start, offers a team folder through AION chmura or a time for your morning review, and otherwise suggests one method you have not used yet.
 
