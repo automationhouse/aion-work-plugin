@@ -1,0 +1,16 @@
+{
+  "description": "AION WORK: on session start, tell the person right away when the AION WORK account is disconnected.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/polaczenie.md\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
