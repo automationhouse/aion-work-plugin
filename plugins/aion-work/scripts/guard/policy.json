@@ -1,7 +1,11 @@
 {
   "version": 1,
   "blockedComponents": [".git", ".ssh", ".aws", ".azure", ".gnupg", ".kube"],
-  "credentialPaths": [".codex/auth.json", ".claude/.credentials.json"],
+  "credentialPaths": [
+    ".codex/auth.json",
+    ".claude/.credentials.json",
+    ".claude/settings.local.json"
+  ],
   "blockedPrefixes": [".env"],
   "privateKeyNames": ["id_rsa", "id_dsa", "id_ecdsa", "id_ed25519"],
   "privateKeySuffixes": [".p12", ".pfx"]

@@ -219,6 +219,8 @@ class Health:
                 self.incomplete("scan_limit", ".")
                 break
             self.directory(pending.pop(), pending)
+        if not self.result["files"]:
+            self.incomplete("no_files_scanned", ".")
         return self.result
 
     def directory(self, path, pending):

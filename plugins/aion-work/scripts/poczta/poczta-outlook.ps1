@@ -1,4 +1,4 @@
-# AION WORK: odczyt poczty i kalendarza z klasycznego Outlooka na Windows. Tylko odczyt.
+﻿# AION WORK: odczyt poczty i kalendarza z klasycznego Outlooka na Windows. Tylko odczyt.
 # Nagłówki:  powershell -NoProfile -ExecutionPolicy Bypass -File poczta-outlook.ps1 [-Godziny 24] [-Limit 50]
 # Treść:     powershell -NoProfile -ExecutionPolicy Bypass -File poczta-outlook.ps1 -Tresc <id wiadomości>
 # Nowy Outlook dla Windows nie udostępnia skrzynki skryptom; potrzebny jest klasyczny Outlook.

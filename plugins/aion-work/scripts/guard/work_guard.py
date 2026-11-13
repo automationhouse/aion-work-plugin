@@ -13,18 +13,47 @@ import sys
 import tempfile
 import time
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 MAX_OUTPUT = 16 * 1024 * 1024
 MAX_BLOB = 50 * 1024 * 1024
 MAX_COMMITS = 10000
 MAX_ENTRIES = 100000
 MAX_SCANNED_BYTES = 128 * 1024 * 1024
+MAX_SKIPPED = 50
+LFS_POINTER = b"version https://git-lfs.github.com/spec/v1\n"
+HOOKS = {"pre-commit": "staged", "pre-push": "pre-push"}
+API_TOKENS = (
+    r"sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{24,}",
+    r"[rs]k_(?:live|test)_[A-Za-z0-9]{16,}",
+    r"sk_[A-Za-z0-9]{24,}",
+    r"whsec_[A-Za-z0-9]{24,}",
+    r"xox[baprs]-[A-Za-z0-9-]{20,}",
+    r"AIza[0-9A-Za-z_-]{35}",
+    r"GOCSPX-[A-Za-z0-9_-]{20,}",
+    r"pat[A-Za-z0-9]{14}\.[a-f0-9]{64}",
+    r"pk_\d+_[A-Z0-9]{32}",
+    r"phx_[A-Za-z0-9]{40,}",
+    r"sntry[su]_[A-Za-z0-9_=-]{40,}",
+    r"SG\.[A-Za-z0-9_-]{22}\.[A-Za-z0-9_-]{43}",
+    r"hf_[A-Za-z0-9]{30,}",
+    r"r8_[A-Za-z0-9]{30,}",
+    r"gsk_[A-Za-z0-9]{40,}",
+    r"xai-[A-Za-z0-9]{40,}",
+    r"pplx-[A-Za-z0-9]{40,}",
+    r"ntn_[A-Za-z0-9]{40,}",
+    r"lin_api_[A-Za-z0-9]{30,}",
+    r"figd_[A-Za-z0-9_-]{30,}",
+    r"npm_[A-Za-z0-9]{36}",
+    r"sbp_[a-f0-9]{40}",
+    r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}:[0-9a-f]{32}",
+    r"\d{8,10}:AA[A-Za-z0-9_-]{33}",
+)
 OID = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})\Z")
 RULES = {
     "private_key": re.compile(r"-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY-----"),
     "github_token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})"),
     "aws_key": re.compile(r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b"),
-    "api_token": re.compile(r"\b(?:sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{24,}|sk_(?:live|test)_[A-Za-z0-9]{16,}|xox[baprs]-[A-Za-z0-9-]{20,})"),
+    "api_token": re.compile(r"\b(?:" + "|".join(API_TOKENS) + ")"),
     "credential_url": re.compile(r"\b(?:https?|postgres(?:ql)?|mysql|mongodb(?:\+srv)?|redis)://[^\s/:@]+:[^\s/@]{4,}@", re.I),
 }
 
@@ -56,6 +85,9 @@ class Guard:
         self.seen = set()
         self.scanned_bytes = 0
         self.entries = 0
+        self.files = set()
+        self.lfs = set()
+        self.skipped = {}
         self.policy = json.loads(Path(__file__).with_name("policy.json").read_text())
         require(self.policy["version"] == 1, "unsupported_policy")
 
@@ -97,7 +129,10 @@ class Guard:
         require(size <= MAX_BLOB, "file_size_limit", path)
         self.scanned_bytes += size
         require(self.scanned_bytes <= MAX_SCANNED_BYTES, "scan_size_limit")
-        self.content(self.git("cat-file", kind, oid, max_output=MAX_BLOB), path)
+        data = self.git("cat-file", kind, oid, max_output=MAX_BLOB)
+        self.content(data, path)
+        if data.startswith(LFS_POINTER):
+            self.lfs.add(oid)
         self.seen.add(oid)
 
     def entry(self, mode, oid, path):
@@ -106,15 +141,26 @@ class Guard:
         self.path(path)
         # Gitlinks contain only an object ID; do not read a submodule's working copy.
         if mode == "160000":
+            self.skipped[path] = "submodule"
             return
         require(mode in ("100644", "100755", "120000"), "unsupported_file_mode", path)
+        self.files.add(path)
         self.object(oid, "blob", path)
+        if mode == "120000":
+            self.skipped[path] = "symlink_target"
+        if oid in self.lfs:
+            self.skipped[path] = "lfs_object"
 
     def staged(self):
         # Read the actual index (including GIT_INDEX_FILE), never the working file.
         records = self.git("ls-files", "--stage", "-z").split(b"\0")
         for record in filter(None, records):
             self.index_entry(record)
+        require(self.files, "nothing_scanned")
+
+    def report(self):
+        skipped = [{"path": path, "reason": reason} for path, reason in self.skipped.items()]
+        return {"files": len(self.files), "skipped": skipped[:MAX_SKIPPED], "skippedCount": len(skipped)}
 
     def index_entry(self, record):
         metadata, raw_path = record.split(b"\t", 1)
@@ -199,17 +245,19 @@ def hook_files(guard):
     return hooks
 
 
+def wrapper(python, script, operation):
+    return f'#!/bin/sh\n# AION WORK content guard {VERSION}\nexec {shlex.quote(python)} {shlex.quote(script)} {operation}\n'.encode()
+
+
 def installation(guard):
     hooks = hook_files(guard)
     destination = hooks / "work-guard"
-    python = shlex.quote(Path(sys.executable).as_posix())
-    script = shlex.quote((destination / "work_guard.py").absolute().as_posix())
     files = {
         destination / "work_guard.py": Path(__file__).read_bytes(),
         destination / "policy.json": Path(__file__).with_name("policy.json").read_bytes(),
-        hooks / "pre-commit": f'#!/bin/sh\n# AION WORK content guard {VERSION}\nexec {python} {script} staged\n'.encode(),
-        hooks / "pre-push": f'#!/bin/sh\n# AION WORK content guard {VERSION}\nexec {python} {script} pre-push\n'.encode(),
     }
+    for name, operation in HOOKS.items():
+        files[hooks / name] = wrapper(Path(sys.executable).as_posix(), (destination / "work_guard.py").absolute().as_posix(), operation)
     return files
 
 
@@ -232,6 +280,36 @@ def install(guard):
     require(status(guard), "hook_installation_incomplete")
 
 
+def own_wrapper(path):
+    no_links(path)
+    if not path.is_file():
+        return False
+    content = path.read_bytes()
+    try:
+        words = shlex.split(content.decode("utf-8").split("\n")[2])
+    except (ValueError, IndexError):
+        return False
+    script = Path(words[2]) if len(words) == 4 else Path()
+    if script.name != "work_guard.py" or script.parent.name != "work-guard":
+        return False
+    return content == wrapper(words[1], words[2], HOOKS[path.name])
+
+
+def repair(guard):
+    # Wrappers hold absolute paths, so a moved folder or a new interpreter breaks them.
+    files = installation(guard)
+    wrappers = {path: content for path, content in files.items() if path.name in HOOKS}
+    for path, content in files.items():
+        require(matches(path, content) or (path in wrappers and own_wrapper(path)), "existing_hooks_require_integration")
+    for path, content in wrappers.items():
+        temporary = path.with_name(path.name + ".aion-tmp")
+        no_links(temporary)
+        temporary.write_bytes(content)
+        temporary.chmod(0o755)
+        os.replace(temporary, path)
+    require(status(guard), "hook_installation_incomplete")
+
+
 def write_new(path, content):
     no_links(path)
     if path.exists():
@@ -250,7 +328,7 @@ class Parser(argparse.ArgumentParser):
 
 def main():
     parser = Parser(description=__doc__)
-    parser.add_argument("command", choices=["staged", "pre-push", "install", "status"])
+    parser.add_argument("command", choices=["staged", "pre-push", "install", "status", "repair"])
     parser.add_argument("--repo", type=Path, default=Path.cwd())
     args = parser.parse_args()
     guard = Guard(args.repo.absolute())
@@ -258,13 +336,16 @@ def main():
     guard.root = Path(os.fsdecode(guard.git("rev-parse", "--show-toplevel").strip()))
     if args.command == "install":
         install(guard)
+    elif args.command == "repair":
+        repair(guard)
     elif args.command == "status":
         require(status(guard), "guard_not_installed")
     elif args.command == "staged":
         guard.staged()
     else:
         guard.pre_push()
-    print(json.dumps({"ok": True, "operation": args.command, "policyVersion": guard.policy["version"]}))
+    scanned = guard.report() if args.command in ("staged", "pre-push") else {}
+    print(json.dumps({"ok": True, "operation": args.command, "policyVersion": guard.policy["version"], **scanned}))
 
 
 if __name__ == "__main__":
