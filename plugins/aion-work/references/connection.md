@@ -42,7 +42,7 @@ Narzędzia osobistego MIND i importu Company Context nie przyjmują `teamId`; ni
 
 Zgłoszenie do pomocy AION WORK idzie formularzem pomocy AION, tym samym co w panelu app.aionwork.com. Zgłoszenie trafia do zespołu pomocy, który odpowiada w ciągu 24 godzin. Gdy formularz się nie otwiera, zapasem jest mail na support@automation.house. Sprawy AION MIND idą na hello@aionmind.com.
 
-Zgłoszenie jest ostatnim krokiem. Gdy działa połączenie z AION, najpierw rozpoznaj i napraw problem według metody `pomoc.md` (skill [pomoc](../skills/pomoc/SKILL.md)). Ta sekcja wystarcza sama, gdy połączenia nie da się naprawić albo metody nie ma w bazie.
+Zgłoszenie jest ostatnim krokiem. Gdy działa połączenie z AION, najpierw rozpoznaj i napraw problem według metody `pomoc.md` (skill [help](../skills/help/SKILL.md)). Ta sekcja wystarcza sama, gdy połączenia nie da się naprawić albo metody nie ma w bazie.
 
 Rozpoznaj, kto może pomóc. Brak przydziału modułu, zaproszenia do firmy albo dostępu do repo na GitHubie rozwiązuje administrator firmy: podaj adres z odmowy serwera albo panel firmy. Do AION kieruj, gdy odmowa trwa mimo opłaconego dostępu lub członkostwa, gdy serwer zwraca `work.mcp.errors.unavailable` albo inny błąd po ponowieniu, gdy klient nie wykrywa MCP AION WORK i gdy brakuje narzędzi, które powinny być dostępne.
 

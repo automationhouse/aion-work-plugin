@@ -4,7 +4,7 @@ description: >-
   MarketingOS z AION WORK: strategia marketingowa, konkurencja, posty, artykuły i newslettery, poprawa tekstu, plan publikacji, język marki, kreacja (brief dla grafika, grafiki, prompty, wideo), reklamy Meta Ads i Google Ads, analityka, landing page, raport zmian. Używaj na „napisz posta”, „popraw ten tekst”, „zaplanuj kampanię”, „brief dla grafika”, „sprawdź reklamy na Facebooku”, „liczby się nie zgadzają”, „popraw landing” albo „co robi konkurencja”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten koszyk; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten koszyk; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 # MarketingOS
 

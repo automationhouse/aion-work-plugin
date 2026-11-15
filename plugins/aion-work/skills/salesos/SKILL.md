@@ -4,7 +4,7 @@ description: >-
   Chcesz pozyskać klienta albo sprzedawać więcej: przygotować kontakt, rozmowę lub ofertę, obsłużyć obiekcję albo rozwinąć sprzedaż. Skill AION WORK SalesOS: AI dobiera do zadania procedurę sprzedażową i prowadzi je według niej. Używaj na „przygotuj mnie do rozmowy z klientem”, „klient mówi, że za drogo”, „napisz ofertę” albo „napisz do leadów, które milczą”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 # SalesOS
 

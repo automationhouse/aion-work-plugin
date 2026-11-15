@@ -4,7 +4,7 @@ description: >-
   Baza wiedzy 22 Community w AION WORK, dla członków społeczności: kursy (LTV, CAC, HR, Rentowność, Strategia, Delegowanie, Personal Brand), nagrania eventów, prelekcje i spotkania przerobione na wiedzę. AI szuka w niej odpowiedzi na Twoje pytanie o firmę i podaje materiał, z którego ją wzięło. Używaj na „co wiedza 22 Community mówi o podwyżkach cen”, „znajdź w 22 Community coś o rekrutacji menedżera”, „jak na evencie 22C liczyli marżę” albo „pokaż, co jest w bazie 22 Community”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 # 22 Community
 

@@ -4,7 +4,7 @@ description: >-
   AI Powered CEO z AION WORK: paczka dla właściciela i szefa firmy. Strategia i model biznesowy, ceny, konkurencja, przegląd tygodnia CEO, procesy i instrukcje dla zespołu, spotkania, rekrutacja, oceny i trudne rozmowy z ludźmi, finanse firmy: rachunek zysków i strat, przepływy pieniędzy. Używaj na „czy nasze ceny mają sens”, „zrób przegląd tygodnia firmy”, „opisz ten proces dla zespołu”, „przygotuj mnie do trudnej rozmowy z pracownikiem”, „kogo zatrudnić najpierw” albo „gdzie uciekają nam pieniądze”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten koszyk; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten koszyk; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 # AI Powered CEO
 

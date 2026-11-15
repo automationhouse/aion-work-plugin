@@ -1,10 +1,10 @@
 ---
-name: poranek
+name: morning
 description: >-
-  Poranek z AION WORK: ważne zmiany, priorytet dnia i pierwszy gotowy szkic. Używaj na „poranek”, „zaplanuj mi dzień” albo „od czego dziś zacząć”.
+  Poranek z AION WORK: ważne zmiany, priorytet dnia i pierwszy gotowy szkic. Używaj na „morning”, „poranek”, „zaplanuj mi dzień” albo „od czego dziś zacząć”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 Stosuj [wywołanie rutyny](../../references/routines.md): potwierdź dostęp i pobierz rdzeń, a potem `rutyny/README.md`, `rutyny/poranek.md` oraz `rutyny/sygnaly.md` przez `read_instruction`.
 

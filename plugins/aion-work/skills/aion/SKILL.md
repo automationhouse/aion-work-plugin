@@ -16,6 +16,6 @@ Stosuj [minimum komunikacji](../../references/communication.md).
 2. **Rdzeń i metoda.** Po potwierdzeniu dostępu pobierz rdzeń jednym wywołaniem `read_instruction({"paths":["welcome.md","communication.md"]})`, a osobnym wywołaniem `aion-wejscie.md`. Pomijaj dokumenty już przeczytane w tej rozmowie.
 3. **Prowadzenie.** Wykonaj `aion-wejscie.md`: z zadaniem od razu dobierasz metodę według `welcome.md`, bez zadania rozpoznajesz stan i prowadzisz do pomocy, startu, AION chmura, ustawienia poranka albo propozycji metody. Dalsze dokumenty czytaj według wskazań metody, bez czytania całej bazy.
 
-Gdy `aion-wejscie.md` nie ma jeszcze w bazie, pracuj według `welcome.md`: zadanie wykonaj od razu, a bez zadania zastosuj sekcje `starter.md#rozpoznaj-stan-przy-powitaniu` i `starter.md#powitanie-w-gotowym-repo`. Problem prowadź [pomocą](../pomoc/SKILL.md). Nie odtwarzaj metody z pamięci.
+Gdy `aion-wejscie.md` nie ma jeszcze w bazie, pracuj według `welcome.md`: zadanie wykonaj od razu, a bez zadania zastosuj sekcje `starter.md#rozpoznaj-stan-przy-powitaniu` i `starter.md#powitanie-w-gotowym-repo`. Problem prowadź [pomocą](../help/SKILL.md). Nie odtwarzaj metody z pamięci.
 
 Do pracy firmy przekazuj potwierdzony `teamId`. Nie uruchamiaj poranka, przeglądu, ustawienia osobistego ani AION chmura bez prośby albo „tak” na konkretną propozycję. Harmonogram poranka ustawiaj tylko według odczytanej metody i dostępnym mechanizmem hosta.

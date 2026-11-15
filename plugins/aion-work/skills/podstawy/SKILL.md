@@ -4,7 +4,7 @@ description: >-
   Podstawy AION WORK: AION onboarding, czyli przegląd tego, co potrafi AION, uporządkuj sprawy przy chaosie w głowie albo po urlopie, pogłęb ważne zadanie tak, jak zrobiłby je najlepszy specjalista, skrytykuj plan, ofertę lub tekst przed wysyłką, deleguj, gdy brakuje czasu, przegląd tygodnia i miesiąca, zamknij sesję, higiena repo, poczta z Apple Mail lub Outlooka. Używaj na „co potrafi AION”, „pokaż mi możliwości”, „mam chaos”, „co komu obiecałem”, „jak zrobiłby to ekspert”, „sprawdź, zanim wyślę”, „co tu jest słabe”, „nie wyrabiam”, „podsumuj tydzień”, „posprzątaj folder”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten koszyk; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten koszyk; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 # Podstawy AION WORK
 

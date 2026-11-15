@@ -6,7 +6,7 @@ description: >-
 
 # AION start i AION chmura
 
-Wybierz plik według prośby i wykonaj jego kroki od pierwszego. Bez wskazania wykonaj `start.md`. Samo „start” obsłuż tylko bez lokalnego przypisania w repo.
+Wybierz plik według prośby i wykonaj jego kroki od pierwszego. Bez wskazania wykonaj `start.md`. Samo „start” obsłuż według [wyboru procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium).
 
 - **AION start** (`start.md`): połączenie konta i ustawienie AION WORK w nowym folderze albo po zaproszeniu do firmy, aż do pierwszego planu dnia.
 - **AION chmura** (`chmura.md`): „AION chmura”, „/aion-chmura”, „przenieś do chmury”, „kopia w chmurze”, „chcę wpuścić zespół”.

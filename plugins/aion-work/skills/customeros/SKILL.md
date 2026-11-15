@@ -4,7 +4,7 @@ description: >-
   Pracujesz z klientem po sprzedaży: wdrażasz nowego, prowadzisz relację, przygotowujesz status lub raport, rozwijasz współpracę albo widzisz ryzyko, że odejdzie. Skill AION WORK CustomerOS: AI dobiera do zadania procedurę obsługi klienta i prowadzi je według niej. Używaj na „wdrażamy nowego klienta”, „klient się skarży”, „raport dla klienta” albo „klient może odejść”.
 ---
 
-Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; zwykłe polecenie tylko bez lokalnego przypisania w repo.
+Najpierw rozstrzygnij [wybór procedury](../../references/routines.md#wybór-procedury-w-istniejącym-repozytorium). Jawny wybór AION uruchamia ten skill; przy zwykłym poleceniu lokalny plik o tej samej roli jest dopasowaniem, nie zamiennikiem.
 
 # CustomerOS
 
